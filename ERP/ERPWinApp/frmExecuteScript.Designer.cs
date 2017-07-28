@@ -34,13 +34,14 @@
 			this.txtScripts = new System.Windows.Forms.TextBox();
 			this.btnExecute = new System.Windows.Forms.Button();
 			this.btnClose = new System.Windows.Forms.Button();
+			this.label1 = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// btnBrowseScriptFile
 			// 
 			this.btnBrowseScriptFile.BackColor = System.Drawing.Color.DarkSlateGray;
-			this.btnBrowseScriptFile.Location = new System.Drawing.Point(688, 22);
+			this.btnBrowseScriptFile.Location = new System.Drawing.Point(688, 107);
 			this.btnBrowseScriptFile.Name = "btnBrowseScriptFile";
 			this.btnBrowseScriptFile.Size = new System.Drawing.Size(130, 34);
 			this.btnBrowseScriptFile.TabIndex = 0;
@@ -51,7 +52,7 @@
 			// txtBrowseFile
 			// 
 			this.txtBrowseFile.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtBrowseFile.Location = new System.Drawing.Point(21, 25);
+			this.txtBrowseFile.Location = new System.Drawing.Point(21, 110);
 			this.txtBrowseFile.Name = "txtBrowseFile";
 			this.txtBrowseFile.Size = new System.Drawing.Size(661, 31);
 			this.txtBrowseFile.TabIndex = 1;
@@ -59,7 +60,7 @@
 			// groupBox1
 			// 
 			this.groupBox1.Controls.Add(this.txtScripts);
-			this.groupBox1.Location = new System.Drawing.Point(4, 71);
+			this.groupBox1.Location = new System.Drawing.Point(4, 156);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(853, 431);
 			this.groupBox1.TabIndex = 2;
@@ -77,7 +78,7 @@
 			// btnExecute
 			// 
 			this.btnExecute.BackColor = System.Drawing.Color.DarkSlateGray;
-			this.btnExecute.Location = new System.Drawing.Point(584, 507);
+			this.btnExecute.Location = new System.Drawing.Point(584, 592);
 			this.btnExecute.Name = "btnExecute";
 			this.btnExecute.Size = new System.Drawing.Size(130, 34);
 			this.btnExecute.TabIndex = 3;
@@ -88,7 +89,7 @@
 			// btnClose
 			// 
 			this.btnClose.BackColor = System.Drawing.Color.DarkSlateGray;
-			this.btnClose.Location = new System.Drawing.Point(720, 507);
+			this.btnClose.Location = new System.Drawing.Point(720, 592);
 			this.btnClose.Name = "btnClose";
 			this.btnClose.Size = new System.Drawing.Size(130, 34);
 			this.btnClose.TabIndex = 4;
@@ -96,12 +97,24 @@
 			this.btnClose.UseVisualStyleBackColor = false;
 			this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
 			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Modern No. 20", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.label1.Location = new System.Drawing.Point(261, 25);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(401, 50);
+			this.label1.TabIndex = 5;
+			this.label1.Text = "Execute DB Script";
+			// 
 			// frmExecuteScript
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.DarkSlateGray;
-			this.ClientSize = new System.Drawing.Size(862, 553);
+			this.ClientSize = new System.Drawing.Size(862, 633);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btnClose);
 			this.Controls.Add(this.btnExecute);
 			this.Controls.Add(this.groupBox1);
@@ -127,5 +140,6 @@
 		private System.Windows.Forms.TextBox txtScripts;
 		private System.Windows.Forms.Button btnExecute;
 		private System.Windows.Forms.Button btnClose;
+		private System.Windows.Forms.Label label1;
 	}
 }
