@@ -220,6 +220,12 @@
     <Compile Include="frmExecuteScript.Designer.cs">
       <DependentUpon>frmExecuteScript.cs</DependentUpon>
     </Compile>
+    <Compile Include="Masters\frmRoleMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\frmRoleMaster.designer.cs">
+      <DependentUpon>frmRoleMaster.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmExecuteScript.resx">
       <DependentUpon>frmExecuteScript.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\frmRoleMaster.resx">
+      <DependentUpon>frmRoleMaster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

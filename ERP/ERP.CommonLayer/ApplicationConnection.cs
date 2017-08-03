@@ -18,12 +18,35 @@ namespace ERP.CommonLayer
 	        {
 		        switch (read.Key)
 		        {
+			        case "ServerName":
+				        ServerName = read.Value;
+				        break;
 			        case "DatabaseName":
 				        DatabaseName = read.Value;
 				        break;
+			        case "AuthenticationType":
+				        Authentication = read.Value;
+				        break;
+			        case "DBUserName":
+				        Dbusername = read.Value;
+				        break;
+			        case "DBPassword":
+				        Dbpassword = read.Value;
+				        break;
 		        }
 	        }
+
+	        if (Authentication.ToLower() == "windows")
+	        {
+				ConnectionString = "Data Source=" + ServerName + ";Initial Catalog=" + DatabaseName + ";Integrated Security=SSPI;";
+	        }
+	        else
+	        {
+				ConnectionString = "Data Source=" + ServerName + ";Initial Catalog=" + DatabaseName + ";User ID=" +
+								   Dbusername + ";Password=" + Dbpassword + ";";
+	        }
         }
+
 
         #endregion
 
@@ -31,6 +54,10 @@ namespace ERP.CommonLayer
 
         private string _connectionString;
         private string _databaseName;
+	    private string _serverName = string.Empty;
+	    private string _authentication = string.Empty;
+	    private string _dbusername = string.Empty;
+	    private string _dbpassword = string.Empty;
 
         #endregion
 
@@ -47,6 +74,31 @@ namespace ERP.CommonLayer
             get { return _connectionString; }
             set { _connectionString = value; }
         }
-        #endregion
+
+	    public string ServerName
+	    {
+		    get { return _serverName; }
+		    set { _serverName = value; }
+	    }
+
+	    public string Authentication
+	    {
+		    get { return _authentication; }
+		    set { _authentication = value; }
+	    }
+
+	    public string Dbusername
+	    {
+		    get { return _dbusername; }
+		    set { _dbusername = value; }
+	    }
+
+	    public string Dbpassword
+	    {
+		    get { return _dbpassword; }
+		    set { _dbpassword = value; }
+	    }
+
+	    #endregion
     }
 }

@@ -18,6 +18,7 @@ namespace ERPWinApp
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new frmSettings());
 			Application.Run(new frmExecuteScript());
+			Application.Run(new frmRoleMaster());
 		}
 	}
 }

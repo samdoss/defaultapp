@@ -30,7 +30,5 @@ namespace ERP.CommonLayer
 			string allUserPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
 			return allUserPath;
 		}
-
-
 	}
 }

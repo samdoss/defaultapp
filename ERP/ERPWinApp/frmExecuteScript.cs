@@ -17,11 +17,7 @@ namespace ERPWinApp
 	public partial class frmExecuteScript : Form
 	{
 		Dictionary<string, string> dataCollection = new Dictionary<string, string>();
-		private string serverName = string.Empty;
-		private string databasename = string.Empty;
-		private string authentication = string.Empty;
-		private string dbusername = string.Empty;
-		private string dbpassword = string.Empty;
+		
 
 		public frmExecuteScript()
 		{
@@ -30,11 +26,6 @@ namespace ERPWinApp
 
 		private void btnExecute_Click(object sender, EventArgs e)
 		{
-			String sqlServerLogin = dbusername;
-			String password = dbpassword;
-			String dbName = databasename;
-			String remoteSvrName = serverName;
-			string connectionString = string.Empty;
 			//// Connecting to an instance of SQL Server using SQL Server Authentication  
 			//Server srv1 = new Server();   // connects to default instance 
 			//srv1.ConnectionContext.LoginSecure = false;   // set to true for Windows Authentication  
@@ -59,17 +50,9 @@ namespace ERPWinApp
 			//Server srv3 = new Server(srvConn2);
 			//Console.WriteLine(srv3.Information.Version);
 
-			if (authentication.ToLower() == "windows")
-			{
-				connectionString = "Data Source=" + remoteSvrName + ";Initial Catalog=" + dbName + ";Integrated Security=SSPI;";
-			}
-			else
-			{
-				connectionString = "Data Source=" + remoteSvrName + ";Initial Catalog=" + dbName + ";User ID=" +
-				                   dbusername + ";Password=" + dbpassword + ";";
-			}
+			ApplicationConnection appConnection = new ApplicationConnection();
 
-			SqlConnection conn = new SqlConnection(connectionString);
+			SqlConnection conn = new SqlConnection(appConnection.ConnectionString);
 			ServerConnection connectServer = new ServerConnection(conn);
 			Server server = new Server(connectServer);
 			conn.Open();
@@ -80,33 +63,7 @@ namespace ERPWinApp
 
 		private void frmExecuteScript_Load(object sender, EventArgs e)
 		{
-			ReadSettingFile();
-		}
-
-		private void ReadSettingFile()
-		{
-			dataCollection = ERP.CommonLayer.Settings.ReadSettingFiles();
-			foreach (var read in dataCollection)
-			{
-				switch (read.Key)
-				{
-					case "ServerName":
-						serverName = read.Value;
-						break;
-					case "DatabaseName":
-						databasename = read.Value;
-						break;
-					case "AuthenticationType":
-						authentication = read.Value;
-						break;
-					case "DBUserName":
-						dbusername = read.Value;
-						break;
-					case "DBPassword":
-						dbpassword = read.Value;
-						break;
-				}
-			}
+			
 		}
 
 		private void btnClose_Click(object sender, EventArgs e)

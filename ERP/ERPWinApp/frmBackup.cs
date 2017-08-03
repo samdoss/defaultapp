@@ -34,12 +34,12 @@ namespace ERPWinApp
 				myServer.ConnectionContext.Connect();
 				Database myDatabase = myServer.Databases["AdventureWorks"];
 				BackupDatabaseFull(myServer, myDatabase);
-				//BackupDatabaseDifferential(myServer, myDatabase); 
-				//BackupDatabaseLog(myServer, myDatabase); 
-				//BackupDatabaseFullWithCompression(myServer, myDatabase);
-				RestoreDatabase(myServer, myDatabase);
-				//RestoreDatabaseLog(myServer, myDatabase); 
-				//RestoreDatabaseWithDifferentNameAndLocation(myServer, myDatabase); 
+				////BackupDatabaseDifferential(myServer, myDatabase); 
+				////BackupDatabaseLog(myServer, myDatabase); 
+				////BackupDatabaseFullWithCompression(myServer, myDatabase);
+				//RestoreDatabase(myServer, myDatabase);
+				////RestoreDatabaseLog(myServer, myDatabase); 
+				////RestoreDatabaseWithDifferentNameAndLocation(myServer, myDatabase); 
 			}
 			catch (Exception ex)
 			{
