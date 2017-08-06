@@ -226,6 +226,18 @@
     <Compile Include="Masters\frmRoleMaster.designer.cs">
       <DependentUpon>frmRoleMaster.cs</DependentUpon>
     </Compile>
+    <Compile Include="Masters\frmTransferRequestMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\frmTransferRequestMaster.Designer.cs">
+      <DependentUpon>frmTransferRequestMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\frmTransferTableRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\frmTransferTableRecord.Designer.cs">
+      <DependentUpon>frmTransferTableRecord.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +254,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Masters\frmRoleMaster.resx">
       <DependentUpon>frmRoleMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\frmTransferRequestMaster.resx">
+      <DependentUpon>frmTransferRequestMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\frmTransferTableRecord.resx">
+      <DependentUpon>frmTransferTableRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

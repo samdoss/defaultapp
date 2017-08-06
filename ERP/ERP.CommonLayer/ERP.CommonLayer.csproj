@@ -50,6 +50,9 @@
     <Compile Include="DynamicControl\DataGridViewDisableButtonColumn.cs" />
     <Compile Include="DynamicControl\DataGridViewDisabledTextBoxCell.cs" />
     <Compile Include="DynamicControl\DataGridViewDisabledTextBoxColumn.cs" />
+    <Compile Include="DynamicControl\DataGridViewRadioButtonCell.cs" />
+    <Compile Include="DynamicControl\DataGridViewRadioButtonCellLayout.cs" />
+    <Compile Include="DynamicControl\DataGridViewRadioButtonColumn.cs" />
     <Compile Include="Enum.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

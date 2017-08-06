@@ -58,7 +58,7 @@
   <ItemGroup>
     <Compile Include="DatabaseFactoryDL.cs" />
     <Compile Include="RoleDescription.cs" />
-    <Compile Include="RoleDL.cs" />
+    <Compile Include="MasterClassDL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
