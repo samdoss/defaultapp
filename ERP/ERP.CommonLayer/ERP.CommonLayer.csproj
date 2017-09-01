@@ -45,7 +45,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationConnection.cs" />
-    <Compile Include="Common.cs" />
+    <Compile Include="Common\Common.cs" />
+    <Compile Include="Common\clsCryptography.cs" />
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\ePaymentStatus.cs" />
+    <Compile Include="Common\ePaymentTerms.cs" />
+    <Compile Include="Common\ePaymentType.cs" />
+    <Compile Include="Common\FormState.cs" />
+    <Compile Include="DynamicControl\CalendarEditingControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DynamicControl\DataGridViewDisableButtonCell.cs" />
     <Compile Include="DynamicControl\DataGridViewDisableButtonColumn.cs" />
     <Compile Include="DynamicControl\DataGridViewDisabledTextBoxCell.cs" />
@@ -53,11 +62,19 @@
     <Compile Include="DynamicControl\DataGridViewRadioButtonCell.cs" />
     <Compile Include="DynamicControl\DataGridViewRadioButtonCellLayout.cs" />
     <Compile Include="DynamicControl\DataGridViewRadioButtonColumn.cs" />
+    <Compile Include="DynamicControl\HtmlRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Enum.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TransactionResult.cs" />
     <Compile Include="Utilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DynamicControl\HtmlRichTextBox.resx">
+      <DependentUpon>HtmlRichTextBox.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

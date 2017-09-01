@@ -49,7 +49,7 @@ namespace ERPWinApp
 			this.Roleno = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.strpGrid = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.ostrpDelete = new System.Windows.Forms.ToolStripMenuItem();
-			this.PCSHelp = new System.Windows.Forms.HelpProvider();
+			this.ApplicationHelpProvider = new System.Windows.Forms.HelpProvider();
 			((System.ComponentModel.ISupportInitialize)(this.dvRoleDesc)).BeginInit();
 			this.strpGrid.SuspendLayout();
 			this.SuspendLayout();
@@ -255,9 +255,9 @@ namespace ERPWinApp
 			this.ostrpDelete.Text = "Delete";
 			this.ostrpDelete.Click += new System.EventHandler(this.ostrpDelete_Click);
 			// 
-			// PCSHelp
+			// ApplicationHelpProvider
 			// 
-			this.PCSHelp.HelpNamespace = "*.chm";
+			this.ApplicationHelpProvider.HelpNamespace = "*.chm";
 			// 
 			// frmRoleMaster
 			// 
@@ -307,7 +307,7 @@ namespace ERPWinApp
         private System.Windows.Forms.DataGridViewCheckBoxColumn RoleDelete;
         private System.Windows.Forms.DataGridViewCheckBoxColumn RoleEditingChk;
         private System.Windows.Forms.DataGridViewTextBoxColumn Roleno;
-        internal System.Windows.Forms.HelpProvider PCSHelp;
+        internal System.Windows.Forms.HelpProvider ApplicationHelpProvider;
         private System.Windows.Forms.ContextMenuStrip strpGrid;
         private System.Windows.Forms.ToolStripMenuItem ostrpDelete;
     }

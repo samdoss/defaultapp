@@ -1,4 +1,4 @@
-﻿namespace ERPWinApp.Masters
+﻿namespace ERPWinApp
 {
     partial class frmTransferRequestMaster
     {

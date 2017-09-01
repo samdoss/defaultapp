@@ -8,7 +8,7 @@ using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace ERP.DataLayer
 {
-	public class DatabaseFactoryDL
+	public class CustomDatabaseFactoryDL
 	{
 	}
 
@@ -68,7 +68,7 @@ namespace ERP.DataLayer
 //			string spName = "stp_pm_History";
 
 //			DataTable dt = new DataTable();
-//			Database db = DatabaseFactory.CreateDatabase(connectionString);
+//			Database db =CustomDatabaseFactory.CreateDatabase(connectionString);
 
 //			object[] parameters = { Id };
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ERP.CommonLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -92,55 +93,33 @@ namespace ERPWinApp.Masters
         {
             //frmTransferRequestMaster frmTransferRequest = new frmTransferRequestMaster();
             //frmTransferRequest.FormMode = "EDIT";
-            //frmTransferRequest.ChurchMemberID = Convert.ToInt32(lblTableMemberID.Text);
+            //frmTransferRequest.TransferRequestID = Convert.ToInt32(lblTableMemberID.Text);
             //frmTransferRequest.ShowDialog();
             //LoadGridViewData(txtSearchKeyword.Text, 1);
         }
 
         private void LoadGridViewData(string searchKeyword, int searchOption)
         {
-            dgvSearchRecords.Rows.Clear();
-            DataSet dsRecord = new DataSet();
-            ChurchMemberDL cmDL = new ChurchMemberDL();
-            dsRecord = cmDL.GetFindChurchMemberList(searchKeyword, searchOption);
-            int rowCount = 0;
-            if (dsRecord.Tables.Count > 0)
-            {
-                if (dsRecord.Tables[0].Rows.Count > 0)
-                {
-                    foreach (DataRow row in dsRecord.Tables[0].Rows)
-                    {
-                        dgvSearchRecords.Rows.Add();
-                        dgvSearchRecords.Rows[rowCount].Cells[1].Value = rowCount + 1;
-                        dgvSearchRecords.Rows[rowCount].Cells[2].Value = Convert.ToString(row["ChurchMemberID"].ToString());
-                        dgvSearchRecords.Rows[rowCount].Cells[3].Value = Convert.ToString(row["SubscriptionCoverNo"].ToString());
-                        dgvSearchRecords.Rows[rowCount].Cells[4].Value = Convert.ToString(row["MemberName"].ToString());
-                        dgvSearchRecords.Rows[rowCount].Cells[5].Value = Convert.ToString(row["Relationship"].ToString());
-                        dgvSearchRecords.Rows[rowCount].Cells[6].Value = Convert.ToString(row["OtherSubscriptionCoverNo"].ToString());
-
-                        if (dgvSearchRecords.Rows[rowCount].Cells[3].Value.ToString() == "0")
-                        {
-                            dgvSearchRecords.Rows[rowCount].Cells[3].Value = "";
-                            //dgvSearchChurchMember.Rows[rowCount].BackColor = Color.LightPink;
-                            //dgvSearchChurchMember.Rows[rowCount]..Style.SelectionBackColor = Color.LightPink;
-                        }
-
-                        if (dgvSearchRecords.Rows[rowCount].Cells[6].Value.ToString() == "0")
-                        {
-                            dgvSearchRecords.Rows[rowCount].Cells[6].Value = "";
-                            //dgvSearchChurchMember.Rows[rowCount].BackColor = Color.LightPink;
-                            //dgvSearchChurchMember.Rows[rowCount]..Style.SelectionBackColor = Color.LightPink;
-                        }
-
-                        dgvSearchRecords.Rows[rowCount].Cells[7].Value = Convert.ToString(row["ChildMemberName"].ToString());
-                        dgvSearchRecords.Rows[rowCount].Cells[8].Value = Convert.ToString(row["EmailID"].ToString());
-                        dgvSearchRecords.Rows[rowCount].Cells[9].Value = Convert.ToString(row["MobileNo"].ToString());
-                        dgvSearchRecords.Rows[rowCount].Cells[10].Value = Convert.ToString(row["PhoneNumber"].ToString());
-                        dgvSearchRecords.Rows[rowCount].Cells[11].Value = Convert.ToString(row["Area"].ToString());
-                        rowCount++;
-                    }
-                }
-            }
+            //dgvSearchRecords.Rows.Clear();
+            //DataSet dsRecord = new DataSet();
+            //TransferRequestDL cmDL = new TransferRequestDL();
+            //dsRecord = cmDL.GetFindTransferRequestList(searchKeyword, searchOption);
+            //int rowCount = 0;
+            //if (dsRecord.Tables.Count > 0)
+            //{
+            //    if (dsRecord.Tables[0].Rows.Count > 0)
+            //    {
+            //        foreach (DataRow row in dsRecord.Tables[0].Rows)
+            //        {
+            //            dgvSearchRecords.Rows.Add();
+            //            dgvSearchRecords.Rows[rowCount].Cells[1].Value = rowCount + 1;
+            //            dgvSearchRecords.Rows[rowCount].Cells[2].Value = Convert.ToString(row["TransferRequestID"].ToString());
+            //            dgvSearchRecords.Rows[rowCount].Cells[3].Value = Convert.ToString(row["TableName"].ToString());
+                        
+            //            rowCount++;
+            //        }
+            //    }
+            //}
         }
 
         private void btnClose_Click(object sender, EventArgs e)

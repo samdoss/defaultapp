@@ -12,39 +12,10 @@ namespace ERP.CommonLayer
 
         public ApplicationConnection()
         {
-	        Dictionary<string, string> dataCollection = new Dictionary<string, string>();
-	        dataCollection = Settings.ReadSettingFiles();
-	        foreach (var read in dataCollection)
-	        {
-		        switch (read.Key)
-		        {
-			        case "ServerName":
-				        ServerName = read.Value;
-				        break;
-			        case "DatabaseName":
-				        DatabaseName = read.Value;
-				        break;
-			        case "AuthenticationType":
-				        Authentication = read.Value;
-				        break;
-			        case "DBUserName":
-				        Dbusername = read.Value;
-				        break;
-			        case "DBPassword":
-				        Dbpassword = read.Value;
-				        break;
-		        }
-	        }
-
-	        if (Authentication.ToLower() == "windows")
-	        {
-				ConnectionString = "Data Source=" + ServerName + ";Initial Catalog=" + DatabaseName + ";Integrated Security=SSPI;";
-	        }
-	        else
-	        {
-				ConnectionString = "Data Source=" + ServerName + ";Initial Catalog=" + DatabaseName + ";User ID=" +
-								   Dbusername + ";Password=" + Dbpassword + ";";
-	        }
+	        if(string.IsNullOrEmpty(ConnectionString))
+            {
+                ConnectConnectionString();
+            }
         }
 
 
@@ -100,5 +71,44 @@ namespace ERP.CommonLayer
 	    }
 
 	    #endregion
+
+        public string ConnectConnectionString()
+        {
+            Dictionary<string, string> dataCollection = new Dictionary<string, string>();
+            dataCollection = Settings.ReadSettingFiles();
+            foreach (var read in dataCollection)
+            {
+                switch (read.Key)
+                {
+                    case "ServerName":
+                        ServerName = read.Value;
+                        break;
+                    case "DatabaseName":
+                        DatabaseName = read.Value;
+                        break;
+                    case "AuthenticationType":
+                        Authentication = read.Value;
+                        break;
+                    case "DBUserName":
+                        Dbusername = read.Value;
+                        break;
+                    case "DBPassword":
+                        Dbpassword = read.Value;
+                        break;
+                }
+            }
+
+            if (Authentication.ToLower() == "windows")
+            {
+                ConnectionString = "Data Source=" + ServerName + ";Initial Catalog=" + DatabaseName + ";Integrated Security=SSPI;";
+            }
+            else
+            {
+                ConnectionString = "Data Source=" + ServerName + ";Initial Catalog=" + DatabaseName + ";User ID=" +
+                                   Dbusername + ";Password=" + Dbpassword + ";";
+            }
+
+            return ConnectionString;
+        }
     }
 }

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ERPWinApp.Masters
+namespace ERPWinApp
 {
     public partial class frmTransferRequestMaster : Form
     {

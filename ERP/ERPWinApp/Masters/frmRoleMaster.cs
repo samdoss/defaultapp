@@ -34,7 +34,7 @@ namespace ERPWinApp
         
         ApplicationConnection _connectionObj = new ApplicationConnection();
         ShowStatus _ShowStatus;
-		List<RoleDL> _listRole = new List<RoleDL>();
+        List<RoleDescription> _listRole = new List<RoleDescription>();
         private int _gridRowIndex = 0;
         private int _row = 0;
         private int _col = 0;
@@ -51,9 +51,9 @@ namespace ERPWinApp
                 SettingGridColumnOrder();
                 FillShowStatus();
                 FillGrid();
-                PCSHelp.HelpNamespace = (Application.StartupPath + helpFile);
-                PCSHelp.SetHelpKeyword(this, "frmRoleMaster.htm");
-                PCSHelp.SetHelpNavigator(this, HelpNavigator.Topic);
+                ApplicationHelpProvider.HelpNamespace = (Application.StartupPath + helpFile);
+                ApplicationHelpProvider.SetHelpKeyword(this, "frmRoleMaster.htm");
+                ApplicationHelpProvider.SetHelpNavigator(this, HelpNavigator.Topic);
                 ostrpDelete.Visible = false;
                 
                 LoadDefaultColorandFonts();
@@ -156,43 +156,71 @@ namespace ERPWinApp
         {
             try
             {
-            DataGridViewDisableButtonCell _btnUpdate = (DataGridViewDisableButtonCell)dvRoleDesc.Rows[e.RowIndex].Cells["UpdateRecord"];
-            DataGridViewDisableButtonCell _btnCancel = (DataGridViewDisableButtonCell)dvRoleDesc.Rows[e.RowIndex].Cells["CancelRecord"];
+                DataGridViewDisableButtonCell _btnUpdate = (DataGridViewDisableButtonCell)dvRoleDesc.Rows[e.RowIndex].Cells["UpdateRecord"];
+                DataGridViewDisableButtonCell _btnCancel = (DataGridViewDisableButtonCell)dvRoleDesc.Rows[e.RowIndex].Cells["CancelRecord"];
 
-            if ((dvRoleDesc.Columns[e.ColumnIndex].Name == "UpdateRecord") || (dvRoleDesc.Columns[e.ColumnIndex].Name == "CancelRecord"))
-            {
-                if (_btnUpdate.Enabled || _btnCancel.Enabled)
+                if (dvRoleDesc.Columns[e.ColumnIndex].Name == "UpdateRecord")
                 {
-                    if (dvRoleDesc.Columns[e.ColumnIndex].Name == "UpdateRecord")
+                    if (_btnUpdate.Enabled || _btnCancel.Enabled)
                     {
-                        if (!UpdateFormValidation(e.ColumnIndex,e.RowIndex)) { return; }
-                        _listRole.Clear();
-                        RoleDL _Role = new RoleDL();
-                        _Role.RoleID = Convert.ToInt32(dvRoleDesc.Rows[e.RowIndex].Cells[6].Value.ToString());
-                        _Role.Roles = dvRoleDesc.Rows[e.RowIndex].Cells[1].Value.ToString();
-                        _Role.AuditUserID = 1;
-                        _listRole.Add(_Role);
+                        if (dvRoleDesc.Columns[e.ColumnIndex].Name == "UpdateRecord")
+                        {
+                            if (!UpdateFormValidation(e.ColumnIndex, e.RowIndex)) { return; }
+                            _listRole.Clear();
+                            RoleDescription _Role = new RoleDescription();
+                            _Role.RoleID = Convert.ToInt32(dvRoleDesc.Rows[e.RowIndex].Cells[6].Value.ToString());
+                            _Role.Role = dvRoleDesc.Rows[e.RowIndex].Cells[1].Value.ToString();
+                            _Role.AuditUserID = 1;
+                            _listRole.Add(_Role);
 
-                        RoleDescription _RoleDescription = new RoleDescription();
-                        _RoleDescription.RoleList = _listRole;
-                        TransactionResult _Result = null;
-                        _Result = _RoleDescription.Commit(ScreenMode.Edit);
-                        dvRoleDesc.Columns.Remove("CancelRecord");
-                        dvRoleDesc.Columns.Remove("UpdateRecord");
-                        SettingGridColumnOrder();
-                        FillGrid();
+                            RoleDescription _RoleDescription = new RoleDescription();
+                            _RoleDescription.RoleList = _listRole;
+                            TransactionResult _Result = null;
+                            _Result = _RoleDescription.Commit(ScreenMode.Edit);
+                            //dvRoleDesc.Columns.Remove("CancelRecord");
+                            //dvRoleDesc.Columns.Remove("UpdateRecord");
+                            SettingGridColumnOrder();
+                            FillGrid();
+                        }
+
                     }
-                    if (dvRoleDesc.Columns[e.ColumnIndex].Name == "CancelRecord")
+
+
+                }
+                if (dvRoleDesc.Columns[e.ColumnIndex].Name == "CancelRecord")
+                {
+                    if (_btnUpdate.Enabled || _btnCancel.Enabled)
                     {
-                        dvRoleDesc.Columns.Remove("CancelRecord");
-                        dvRoleDesc.Columns.Remove("UpdateRecord");
-                        SettingGridColumnOrder();
-                        FillGrid();
+                        if (dvRoleDesc.Columns[e.ColumnIndex].Name == "UpdateRecord")
+                        {
+                            if (!UpdateFormValidation(e.ColumnIndex, e.RowIndex)) { return; }
+                            _listRole.Clear();
+                            RoleDescription _Role = new RoleDescription();
+                            _Role.RoleID = Convert.ToInt32(dvRoleDesc.Rows[e.RowIndex].Cells[6].Value.ToString());
+                            _Role.Role = dvRoleDesc.Rows[e.RowIndex].Cells[1].Value.ToString();
+                            _Role.AuditUserID = 1;
+                            _listRole.Add(_Role);
+
+                            RoleDescription _RoleDescription = new RoleDescription();
+                            _RoleDescription.RoleList = _listRole;
+                            TransactionResult _Result = null;
+                            _Result = _RoleDescription.Commit(ScreenMode.Edit);
+                            //dvRoleDesc.Columns.Remove("CancelRecord");
+                            //dvRoleDesc.Columns.Remove("UpdateRecord");
+                            SettingGridColumnOrder();
+                            FillGrid();
+                        }
+                        if (dvRoleDesc.Columns[e.ColumnIndex].Name == "CancelRecord")
+                        {
+                            //dvRoleDesc.Columns.Remove("CancelRecord");
+                            //dvRoleDesc.Columns.Remove("UpdateRecord");
+                            SettingGridColumnOrder();
+                            FillGrid();
+                        }
                     }
                 }
             }
-        }
-        catch { }
+            catch { }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -212,8 +240,8 @@ namespace ERPWinApp
                     {
                         if ((_Row.Cells[1].Value != null))
                         {
-                            RoleDL _Role = new RoleDL();
-                            _Role.Roles = _Row.Cells[1].Value.ToString();
+                            RoleDescription _Role = new RoleDescription();
+                            _Role.Role = _Row.Cells[1].Value.ToString();
                             _Role.AuditUserID = 1;
                             _Role.IsEnabled = EnableDisable;
                             _listRole.Add(_Role);
@@ -267,7 +295,7 @@ namespace ERPWinApp
                         status = _Row.Cells[4].Value.ToString();
                         if (status == "1" || status == "True")
                         {
-                            RoleDL _Role = new RoleDL();
+                            RoleDescription _Role = new RoleDescription();
                             _Role.RoleID = Convert.ToInt32(_Row.Cells[6].Value.ToString());
                             _listRole.Add(_Role);
                         }
@@ -557,13 +585,13 @@ namespace ERPWinApp
 				_listRole = RoleDescription.GetEnableDisableRole(_connectionObj, EnableDisable);
 
                 dvRoleDesc.Rows.Clear();
-                foreach (RoleDL _RoleDescription in _listRole)
+                foreach (RoleDescription _RoleDescription in _listRole)
                 {
                     dvRoleDesc.Rows.Add();
                     dvRoleDesc.Rows[_RowIndex].ReadOnly = true;
                     dvRoleDesc[6, _RowIndex].Value = _RoleDescription.RoleID.ToString();
                     dvRoleDesc[0, _RowIndex].Value = _RowIndex + 1;
-                    dvRoleDesc[1, _RowIndex].Value = _RoleDescription.Roles;
+                    dvRoleDesc[1, _RowIndex].Value = _RoleDescription.Role;
                     DataGridViewDisableButtonCell buttonEdit = (DataGridViewDisableButtonCell)dvRoleDesc.Rows[_RowIndex].Cells["RoleEdit"];
                     DataGridViewDisableButtonCell buttonStatus = (DataGridViewDisableButtonCell)dvRoleDesc.Rows[_RowIndex].Cells["RoleStatus"];
                     buttonEdit.Enabled = true;
@@ -585,9 +613,9 @@ namespace ERPWinApp
             }
             catch (Exception ex)
             {
-				//_errorLog = new ErrorLog();
-				//_errorLog.ErrorMessage = ex.Message;
-				//_errorLog.ShowError("Role Master", "frmRoleMaster", "FillGrid");
+				//
+				//
+				//ErrorLog.LogErrorMessageToDB("Role Master", "frmRoleMaster", "FillGrid");
             }
         }
 

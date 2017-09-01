@@ -1,0 +1,31 @@
+﻿GO
+CREATE TABLE [dbo].[ErrorMessageLog](
+	[ErrorMessageLogID] [int] IDENTITY(1,1) NOT NULL,
+	[PageName] [varchar](100) NULL,
+	[ClassName] [varchar](100) NULL,
+	[EventName] [varchar](100) NOT NULL,
+	[ErrorMessage] [varchar](2000) NOT NULL,
+	[AuditDate] [datetime] NOT NULL,
+ CONSTRAINT [PK_ErrorMessageLog] PRIMARY KEY CLUSTERED 
+(
+	[ErrorMessageLogID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+GO
+
+CREATE PROCEDURE [dbo].[spAddLogErrorMessageToDB]
+(
+	@PageName		varchar(100),
+	@ClassName		varchar(100),
+	@EventName		varchar(100),
+	@ErrorMessage	varchar(2000)
+)
+AS
+BEGIN
+	INSERT INTO ErrorMessageLog (PageName, ClassName, EventName, ErrorMessage, AuditDate)
+	VALUES(@PageName, @ClassName, @EventName, @ErrorMessage,GETDATE())
+END
+GO

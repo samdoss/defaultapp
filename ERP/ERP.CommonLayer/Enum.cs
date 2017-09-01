@@ -36,8 +36,10 @@ namespace ERP.CommonLayer
 	/// </summary>
 	public enum AddressCategory
 	{
-		User = 1
-	}
+		User = 1,
+        Customer = 2,
+        Supplier = 3
+    }
 
 	/// <summary>
 	/// Enums for Contacts

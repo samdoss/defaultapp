@@ -35,6 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxInterop.AcroPDFLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\AxInterop.AcroPDFLib.dll</HintPath>
+    </Reference>
     <Reference Include="CRVsPackageLib, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CRVsPackageLib.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -149,6 +153,18 @@
       <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\FlashControlV71.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa, Version=5.5.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra, Version=5.5.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\itextsharp.xtra.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
@@ -196,6 +212,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
@@ -208,6 +225,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Billing\frmBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Billing\frmBill.designer.cs">
+      <DependentUpon>frmBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Billing\frmBilling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Billing\frmBilling.designer.cs">
+      <DependentUpon>frmBilling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\frmFindBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\frmFindBill.Designer.cs">
+      <DependentUpon>frmFindBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\frmFindCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\frmFindCompany.Designer.cs">
+      <DependentUpon>frmFindCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\frmFindSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\frmFindSupplier.Designer.cs">
+      <DependentUpon>frmFindSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\frmFindUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\frmFindUser.Designer.cs">
+      <DependentUpon>frmFindUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\frmTheme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\frmTheme.Designer.cs">
+      <DependentUpon>frmTheme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CustomImages.cs" />
+    <Compile Include="Controls\CustomMessageBox.cs" />
+    <Compile Include="Controls\MessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\MessageForm.Designer.cs">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBackup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +286,36 @@
     </Compile>
     <Compile Include="frmExecuteScript.Designer.cs">
       <DependentUpon>frmExecuteScript.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintHost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintHost.designer.cs">
+      <DependentUpon>frmPrintHost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\frmStockMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\frmStockMaster.designer.cs">
+      <DependentUpon>frmStockMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\frmCountryStateCity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\frmCountryStateCity.designer.cs">
+      <DependentUpon>frmCountryStateCity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\frmProductMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\frmProductMaterial.designer.cs">
+      <DependentUpon>frmProductMaterial.cs</DependentUpon>
     </Compile>
     <Compile Include="Masters\frmRoleMaster.cs">
       <SubType>Form</SubType>
@@ -238,6 +335,143 @@
     <Compile Include="Masters\frmTransferTableRecord.Designer.cs">
       <DependentUpon>frmTransferTableRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="Masters\frmUnitMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Masters\frmUnitMaster.designer.cs">
+      <DependentUpon>frmUnitMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIForm.designer.cs">
+      <DependentUpon>MDIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Client\AddEditClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Client\AddEditClient.designer.cs">
+      <DependentUpon>AddEditClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Client\ClientsReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Client\ClientsReport.designer.cs">
+      <DependentUpon>ClientsReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Company\AddCompanyDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Company\AddCompanyDetails.Designer.cs">
+      <DependentUpon>AddCompanyDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Company\EditCompanyDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Company\EditCompanyDetails.Designer.cs">
+      <DependentUpon>EditCompanyDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Delivery\frmDelivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Delivery\frmDelivery.Designer.cs">
+      <DependentUpon>frmDelivery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Invoices\AddEditInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Invoices\AddEditInvoice.Designer.cs">
+      <DependentUpon>AddEditInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Invoices\AddTaxes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Invoices\AddTaxes.Designer.cs">
+      <DependentUpon>AddTaxes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Invoices\EditInvoiceProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Invoices\EditInvoiceProduct.Designer.cs">
+      <DependentUpon>EditInvoiceProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Invoices\EditTax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Invoices\EditTax.Designer.cs">
+      <DependentUpon>EditTax.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Invoices\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Invoices\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Invoices\InvoicesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Invoices\InvoicesReport.Designer.cs">
+      <DependentUpon>InvoicesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Invoices\PreviewInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Invoices\PreviewInvoice.Designer.cs">
+      <DependentUpon>PreviewInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Products\AddEditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Products\AddEditProduct.Designer.cs">
+      <DependentUpon>AddEditProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Products\ProductServiceReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Products\ProductServiceReport.Designer.cs">
+      <DependentUpon>ProductServiceReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\PurchaseOrder\AddEditPurchaseOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\PurchaseOrder\AddEditPurchaseOrder.Designer.cs">
+      <DependentUpon>AddEditPurchaseOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\PurchaseOrder\EditPurchaseOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\PurchaseOrder\EditPurchaseOrder.Designer.cs">
+      <DependentUpon>EditPurchaseOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\PurchaseOrder\PreviewPurchaseOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\PurchaseOrder\PreviewPurchaseOrder.Designer.cs">
+      <DependentUpon>PreviewPurchaseOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\PurchaseOrder\PurchaseOrderReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\PurchaseOrder\PurchaseOrderReport.Designer.cs">
+      <DependentUpon>PurchaseOrderReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Supplier\AddEditSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Supplier\AddEditSupplier.designer.cs">
+      <DependentUpon>AddEditSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Supplier\SupplierReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Supplier\SupplierReport.designer.cs">
+      <DependentUpon>SupplierReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,11 +480,86 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Testform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Testform.Designer.cs">
+      <DependentUpon>Testform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManagement\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement\frmResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManagement\frmResetPassword.Designer.cs">
+      <DependentUpon>frmResetPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement\frmRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManagement\frmRole.designer.cs">
+      <DependentUpon>frmRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement\frmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManagement\frmUser.Designer.cs">
+      <DependentUpon>frmUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement\frmUserRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManagement\frmUserRole.designer.cs">
+      <DependentUpon>frmUserRole.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Billing\frmBill.resx">
+      <DependentUpon>frmBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Billing\frmBilling.resx">
+      <DependentUpon>frmBilling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\frmFindBill.resx">
+      <DependentUpon>frmFindBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\frmFindCompany.resx">
+      <DependentUpon>frmFindCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\frmFindSupplier.resx">
+      <DependentUpon>frmFindSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\frmFindUser.resx">
+      <DependentUpon>frmFindUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\frmTheme.resx">
+      <DependentUpon>frmTheme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MessageForm.resx">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBackup.resx">
       <DependentUpon>frmBackup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmExecuteScript.resx">
       <DependentUpon>frmExecuteScript.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintHost.resx">
+      <DependentUpon>frmPrintHost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\frmStockMaster.resx">
+      <DependentUpon>frmStockMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\frmCountryStateCity.resx">
+      <DependentUpon>frmCountryStateCity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Masters\frmProductMaterial.resx">
+      <DependentUpon>frmProductMaterial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Masters\frmRoleMaster.resx">
       <DependentUpon>frmRoleMaster.cs</DependentUpon>
@@ -261,17 +570,97 @@
     <EmbeddedResource Include="Masters\frmTransferTableRecord.resx">
       <DependentUpon>frmTransferTableRecord.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Masters\frmUnitMaster.resx">
+      <DependentUpon>frmUnitMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIForm.resx">
+      <DependentUpon>MDIForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Client\AddEditClient.resx">
+      <DependentUpon>AddEditClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Client\ClientsReport.resx">
+      <DependentUpon>ClientsReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Company\AddCompanyDetails.resx">
+      <DependentUpon>AddCompanyDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Company\EditCompanyDetails.resx">
+      <DependentUpon>EditCompanyDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Delivery\frmDelivery.resx">
+      <DependentUpon>frmDelivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Invoices\AddEditInvoice.resx">
+      <DependentUpon>AddEditInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Invoices\AddTaxes.resx">
+      <DependentUpon>AddTaxes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Invoices\EditInvoiceProduct.resx">
+      <DependentUpon>EditInvoiceProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Invoices\EditTax.resx">
+      <DependentUpon>EditTax.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Invoices\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Invoices\InvoicesReport.resx">
+      <DependentUpon>InvoicesReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Invoices\PreviewInvoice.resx">
+      <DependentUpon>PreviewInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Products\AddEditProduct.resx">
+      <DependentUpon>AddEditProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Products\ProductServiceReport.resx">
+      <DependentUpon>ProductServiceReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\PurchaseOrder\AddEditPurchaseOrder.resx">
+      <DependentUpon>AddEditPurchaseOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\PurchaseOrder\EditPurchaseOrder.resx">
+      <DependentUpon>EditPurchaseOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\PurchaseOrder\PreviewPurchaseOrder.resx">
+      <DependentUpon>PreviewPurchaseOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\PurchaseOrder\PurchaseOrderReport.resx">
+      <DependentUpon>PurchaseOrderReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Supplier\AddEditSupplier.resx">
+      <DependentUpon>AddEditSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Supplier\SupplierReport.resx">
+      <DependentUpon>SupplierReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Testform.resx">
+      <DependentUpon>Testform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManagement\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManagement\frmResetPassword.resx">
+      <DependentUpon>frmResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManagement\frmRole.resx">
+      <DependentUpon>frmRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManagement\frmUser.resx">
+      <DependentUpon>frmUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManagement\frmUserRole.resx">
+      <DependentUpon>frmUserRole.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -296,6 +685,228 @@
       <Project>{40d6d402-b7f8-446c-b42b-4b5cca32ab44}</Project>
       <Name>ERP.DataLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\181_thumb.jpeg" />
+    <Content Include="images\backgroundimage.png" />
+    <Content Include="images\companylogo.jpg" />
+    <Content Include="images\erpmodulefinance.jpg" />
+    <Content Include="images\erpmodulesmodule.jpg" />
+    <Content Include="images\logoimage.jpg" />
+    <Content Include="images\rupeesymbol.png" />
+    <Content Include="lib\AxInterop.AcroPDFLib.dll" />
+    <Content Include="lib\Interop.AcroPDFLib.dll" />
+    <Content Include="lib\itextsharp.dll" />
+    <Content Include="lib\itextsharp.pdfa.dll" />
+    <Content Include="lib\itextsharp.xtra.dll" />
+    <None Include="images\software-wallpapers.jpg" />
+    <None Include="images\backgroundwallpapers.jpg" />
+    <Content Include="images\billinglogo.jpg" />
+    <Content Include="images\buttons\add.png" />
+    <Content Include="images\buttons\adown.png" />
+    <Content Include="images\buttons\arrow-down.png" />
+    <Content Include="images\buttons\arrow_down_ico.png" />
+    <Content Include="images\buttons\arrow_up_ico.png" />
+    <Content Include="images\buttons\aup.png" />
+    <Content Include="images\buttons\backup_img.png" />
+    <Content Include="images\buttons\Box_add.png" />
+    <Content Include="images\buttons\Box_view.png" />
+    <Content Include="images\buttons\Calendar.png" />
+    <Content Include="images\buttons\coins.png" />
+    <Content Include="images\buttons\copy.png" />
+    <Content Include="images\buttons\cross-small-disable.png" />
+    <Content Include="images\buttons\cross-small-enable.png" />
+    <Content Include="images\buttons\cross-small.png" />
+    <Content Include="images\buttons\Cross.png" />
+    <Content Include="images\buttons\disks.gif" />
+    <Content Include="images\buttons\edit-icon.png" />
+    <Content Include="images\buttons\email.png" />
+    <Content Include="images\buttons\error.png" />
+    <Content Include="images\buttons\Exit.png" />
+    <Content Include="images\buttons\fontminus.png" />
+    <Content Include="images\buttons\fontplus.png" />
+    <Content Include="images\buttons\get.png" />
+    <Content Include="images\buttons\geth.png" />
+    <Content Include="images\buttons\happy.png" />
+    <Content Include="images\buttons\ico_calendar.png" />
+    <Content Include="images\buttons\ico_check.png" />
+    <Content Include="images\buttons\ico_help.png" />
+    <Content Include="images\buttons\ico_right.png" />
+    <Content Include="images\buttons\Key.png" />
+    <Content Include="images\buttons\Left.png" />
+    <Content Include="images\buttons\Left_last.png" />
+    <Content Include="images\buttons\lock.png" />
+    <Content Include="images\buttons\mail.png" />
+    <Content Include="images\buttons\nav_ico_help.png" />
+    <Content Include="images\buttons\nav_ico_new.png" />
+    <Content Include="images\buttons\nav_ico_reports.png" />
+    <Content Include="images\buttons\nav_ico_settings.png" />
+    <Content Include="images\buttons\nav_ico_star.png" />
+    <Content Include="images\buttons\nav_ico_tools.png" />
+    <Content Include="images\buttons\next.png" />
+    <Content Include="images\buttons\open.gif" />
+    <Content Include="images\buttons\Page.png" />
+    <Content Include="images\buttons\Page_export.png" />
+    <Content Include="images\buttons\Page_import.png" />
+    <Content Include="images\buttons\Page_view.png" />
+    <Content Include="images\buttons\pdf.gif" />
+    <Content Include="images\buttons\Pencil.png" />
+    <Content Include="images\buttons\percentage.png" />
+    <Content Include="images\buttons\Person_add.png" />
+    <Content Include="images\buttons\Person_view.png" />
+    <Content Include="images\buttons\printer.gif" />
+    <Content Include="images\buttons\refresh.png" />
+    <Content Include="images\buttons\Right.png" />
+    <Content Include="images\buttons\Right_last.png" />
+    <Content Include="images\buttons\sad.png" />
+    <Content Include="images\buttons\save.png" />
+    <Content Include="images\buttons\Search.png" />
+    <Content Include="images\buttons\Settings.png" />
+    <Content Include="images\buttons\square.png" />
+    <Content Include="images\buttons\start.png" />
+    <Content Include="images\buttons\starth.png" />
+    <Content Include="images\buttons\success.png" />
+    <Content Include="images\buttons\systray_ico_sleek_bill.png" />
+    <Content Include="images\buttons\viewer_ico_checkl.png" />
+    <Content Include="images\buttons\viewer_ico_email.png" />
+    <Content Include="images\buttons\viewer_ico_exit.png" />
+    <Content Include="images\buttons\viewer_ico_invoice.png" />
+    <Content Include="images\buttons\viewer_ico_pdf.png" />
+    <Content Include="images\buttons\viewer_ico_prevl.png" />
+    <Content Include="images\buttons\viewer_ico_print.png" />
+    <Content Include="images\buttons\viewer_ico_tools.png" />
+    <Content Include="images\buttons\x-hover.png" />
+    <Content Include="images\buttons\x.png" />
+    <Content Include="images\buttons\ZoomIn.png" />
+    <Content Include="images\buttons\ZoomOut.png" />
+    <Content Include="images\CompanyLogo\ferrari_world.jpg" />
+    <Content Include="images\CompanyLogo\HD1.jpg" />
+    <Content Include="images\CompanyLogo\monasteries-19v.jpg" />
+    <Content Include="images\dialogs\errorDialog_check.jpg" />
+    <Content Include="images\dialogs\exclamare_64.png" />
+    <Content Include="images\dialogs\icon_exclamare.png" />
+    <Content Include="images\dialogs\icon_info.png" />
+    <Content Include="images\dialogs\icon_question.png" />
+    <Content Include="images\dialogs\icon_results.png" />
+    <Content Include="images\dialogs\icon_tick.png" />
+    <Content Include="images\dialogs\icon_x.png" />
+    <Content Include="images\dialogs\ico_selected_small.png" />
+    <Content Include="images\dialogs\img_firma_no_logo.png" />
+    <Content Include="images\dialogs\info.png" />
+    <Content Include="images\dialogs\info_64.png" />
+    <Content Include="images\dialogs\lock.png" />
+    <Content Include="images\dialogs\systray_info_ico.png" />
+    <Content Include="images\dialogs\tips-green.png" />
+    <Content Include="images\downloaded\BG1.png" />
+    <Content Include="images\downloaded\BG2.png" />
+    <Content Include="images\downloaded\BG3.png" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\icons\000000-1.png" />
+    <Content Include="images\icons\000000-2.png" />
+    <Content Include="images\icons\000000-3.png" />
+    <Content Include="images\icons\000000-4.png" />
+    <Content Include="images\icons\000000-5.png" />
+    <Content Include="images\icons\000000-6.png" />
+    <Content Include="images\icons\0091E5-1.png" />
+    <Content Include="images\icons\0091E5-2.png" />
+    <Content Include="images\icons\0091E5-3.png" />
+    <Content Include="images\icons\0091E5-4.png" />
+    <Content Include="images\icons\0091E5-5.png" />
+    <Content Include="images\icons\0091E5-6.png" />
+    <Content Include="images\icons\2CA70F-1.png" />
+    <Content Include="images\icons\2CA70F-2.png" />
+    <Content Include="images\icons\2CA70F-3.png" />
+    <Content Include="images\icons\2CA70F-4.png" />
+    <Content Include="images\icons\2CA70F-5.png" />
+    <Content Include="images\icons\2CA70F-6.png" />
+    <Content Include="images\icons\3D6B86-1.png" />
+    <Content Include="images\icons\3D6B86-2.png" />
+    <Content Include="images\icons\3D6B86-3.png" />
+    <Content Include="images\icons\3D6B86-4.png" />
+    <Content Include="images\icons\3D6B86-5.png" />
+    <Content Include="images\icons\3D6B86-6.png" />
+    <Content Include="images\icons\4B8B4A-1.png" />
+    <Content Include="images\icons\4B8B4A-2.png" />
+    <Content Include="images\icons\4B8B4A-3.png" />
+    <Content Include="images\icons\4B8B4A-4.png" />
+    <Content Include="images\icons\4B8B4A-5.png" />
+    <Content Include="images\icons\4B8B4A-6.png" />
+    <Content Include="images\icons\A3A3A3-1.png" />
+    <Content Include="images\icons\A3A3A3-2.png" />
+    <Content Include="images\icons\A3A3A3-3.png" />
+    <Content Include="images\icons\A3A3A3-4.png" />
+    <Content Include="images\icons\A3A3A3-5.png" />
+    <Content Include="images\icons\A3A3A3-6.png" />
+    <Content Include="images\icons\A7127B-1.png" />
+    <Content Include="images\icons\A7127B-2.png" />
+    <Content Include="images\icons\A7127B-3.png" />
+    <Content Include="images\icons\A7127B-4.png" />
+    <Content Include="images\icons\A7127B-5.png" />
+    <Content Include="images\icons\A7127B-6.png" />
+    <Content Include="images\icons\arrowd.png" />
+    <Content Include="images\icons\arrowdlight.png" />
+    <Content Include="images\icons\B82D2D-1.png" />
+    <Content Include="images\icons\B82D2D-2.png" />
+    <Content Include="images\icons\B82D2D-3.png" />
+    <Content Include="images\icons\B82D2D-4.png" />
+    <Content Include="images\icons\B82D2D-5.png" />
+    <Content Include="images\icons\B82D2D-6.png" />
+    <Content Include="images\icons\busy.gif" />
+    <Content Include="images\icons\busy2.gif" />
+    <Content Include="images\icons\casuta_noastra.png" />
+    <Content Include="images\icons\cross-small-bw.png" />
+    <Content Include="images\icons\cross-small-r.png" />
+    <Content Include="images\icons\dashboard_ico_reports.png" />
+    <Content Include="images\icons\dashboard_ico_settings.png" />
+    <Content Include="images\icons\dashboard_ico_tools.png" />
+    <Content Include="images\icons\dashboard_new_estimate.png" />
+    <Content Include="images\icons\dashboard_new_estimate_hover.png" />
+    <Content Include="images\icons\dashboard_new_invoice.png" />
+    <Content Include="images\icons\dashboard_new_invoice_hover.png" />
+    <Content Include="images\icons\dashboard_new_quotation.png" />
+    <Content Include="images\icons\dashboard_new_quotation_hover.png" />
+    <Content Include="images\icons\E58B00-1.png" />
+    <Content Include="images\icons\E58B00-2.png" />
+    <Content Include="images\icons\E58B00-3.png" />
+    <Content Include="images\icons\E58B00-4.png" />
+    <Content Include="images\icons\E58B00-5.png" />
+    <Content Include="images\icons\E58B00-6.png" />
+    <Content Include="images\icons\icon.png" />
+    <Content Include="images\icons\icon_mic.gif" />
+    <Content Include="images\icons\icon_question_mark.jpg" />
+    <Content Include="images\icons\icon_tick.png" />
+    <Content Include="images\icons\ico_intrebare.png" />
+    <Content Include="images\icons\ico_problema.png" />
+    <Content Include="images\icons\ico_site_sleekbill.png" />
+    <Content Include="images\icons\ico_sugestie.png" />
+    <Content Include="images\icons\information.png" />
+    <Content Include="images\icons\initializare_ico_restore.png" />
+    <Content Include="images\icons\initializare_ico_test.png" />
+    <Content Include="images\icons\initializare_ico_use.png" />
+    <Content Include="images\icons\logo.jpg" />
+    <Content Include="images\icons\logo.png" />
+    <Content Include="images\icons\Ok_32.png" />
+    <Content Include="images\icons\poll_face.png" />
+    <Content Include="images\icons\roti.png" />
+    <Content Include="images\icons\salvare+simpla2_03.png" />
+    <Content Include="images\icons\sleekbill-icon-update.png" />
+    <Content Include="images\icons\sugestii_img_mail.png" />
+    <Content Include="images\icons\sugestii_smile_happy.png" />
+    <Content Include="images\icons\sugestii_smile_sad.png" />
+    <Content Include="images\icons\systray_img_config.png" />
+    <Content Include="images\icons\systray_img_lock.png" />
+    <Content Include="images\icons\tick.png" />
+    <Content Include="images\icons\warning.png" />
+    <Content Include="images\notifiers\1.19-27-trial.jpg" />
+    <Content Include="images\notifiers\2.23-trial.jpg" />
+    <Content Include="images\notifiers\3.30-trial.jpg" />
+    <Content Include="images\notifiers\free-1.jpg" />
+    <Content Include="images\notifiers\free-2b.jpg" />
+    <Content Include="images\notifiers\Trial2-no-company.jpg" />
+    <Content Include="images\notifiers\Trial3-no-invoice.jpg" />
+    <Content Include="images\splash\splash-screen-india.jpg" />
+    <Content Include="images\splash\splash-screen.jpg" />
+    <Content Include="images\START.JPG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

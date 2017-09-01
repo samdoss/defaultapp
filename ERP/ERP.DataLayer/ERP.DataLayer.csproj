@@ -49,6 +49,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,8 +58,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\BillDescription.cs" />
+    <Compile Include="Admin\City.cs" />
+    <Compile Include="Admin\Country.cs" />
+    <Compile Include="Admin\CompanyInformation.cs" />
+    <Compile Include="Admin\Material.cs" />
+    <Compile Include="Admin\StockDescription.cs" />
+    <Compile Include="Admin\State.cs" />
+    <Compile Include="Admin\Theme.cs" />
+    <Compile Include="Admin\UnitDescription.cs" />
+    <Compile Include="Billing\PatientBilling.cs" />
+    <Compile Include="Common\ActiveUsers.cs" />
+    <Compile Include="Common\CalendarCell.cs" />
+    <Compile Include="Common\CalendarColumn.cs" />
+    <Compile Include="Common\CommonDL.cs" />
+    <Compile Include="Common\ErrorLog.cs" />
+    <Compile Include="Modules\Client.cs" />
+    <Compile Include="Modules\Company.cs" />
+    <Compile Include="Modules\PurchaseOrder.cs" />
+    <Compile Include="Modules\Invoice.cs" />
+    <Compile Include="Modules\PurchaseOrderProduct.cs" />
+    <Compile Include="Modules\InvoiceProduct.cs" />
+    <Compile Include="Modules\PaymentStatus.cs" />
+    <Compile Include="Modules\PaymentTerms.cs" />
+    <Compile Include="Modules\PaymentType.cs" />
+    <Compile Include="Modules\Product.cs" />
+    <Compile Include="Modules\SupplierDL.cs" />
+    <Compile Include="Modules\Tax.cs" />
+    <Compile Include="UserManagement\ChangePassword.cs" />
+    <Compile Include="UserManagement\Login.cs" />
+    <Compile Include="UserManagement\ResetPassword.cs" />
+    <Compile Include="UserManagement\Role.cs" />
+    <Compile Include="UserManagement\Users.cs" />
+    <Compile Include="UserManagement\UserSettings.cs" />
+    <Content Include="Common\query.txt" />
+    <Compile Include="Common\MDIMenu.cs" />
+    <Compile Include="Common\Utility.cs" />
+    <Compile Include="Common\Variables.cs" />
     <Compile Include="DatabaseFactoryDL.cs" />
-    <Compile Include="RoleDescription.cs" />
+    <Compile Include="Modules\StockDL.cs" />
+    <Compile Include="Admin\RoleDescription.cs" />
     <Compile Include="MasterClassDL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
