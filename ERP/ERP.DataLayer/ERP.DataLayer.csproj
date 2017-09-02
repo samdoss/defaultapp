@@ -75,6 +75,8 @@
     <Compile Include="Common\ErrorLog.cs" />
     <Compile Include="Modules\Client.cs" />
     <Compile Include="Modules\Company.cs" />
+    <Compile Include="Modules\Estimate.cs" />
+    <Compile Include="Modules\EstimateProduct.cs" />
     <Compile Include="Modules\PurchaseOrder.cs" />
     <Compile Include="Modules\Invoice.cs" />
     <Compile Include="Modules\PurchaseOrderProduct.cs" />

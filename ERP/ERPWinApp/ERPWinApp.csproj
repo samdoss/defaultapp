@@ -377,6 +377,30 @@
     <Compile Include="Modules\Delivery\frmDelivery.Designer.cs">
       <DependentUpon>frmDelivery.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Estimate\AddEditEstimate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Estimate\AddEditEstimate.Designer.cs">
+      <DependentUpon>AddEditEstimate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Estimate\EditEstimate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Estimate\EditEstimate.Designer.cs">
+      <DependentUpon>EditEstimate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Estimate\EstimateReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Estimate\EstimateReport.Designer.cs">
+      <DependentUpon>EstimateReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Estimate\PreviewEstimate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Estimate\PreviewEstimate.Designer.cs">
+      <DependentUpon>PreviewEstimate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Invoices\AddEditInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -590,6 +614,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Delivery\frmDelivery.resx">
       <DependentUpon>frmDelivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Estimate\AddEditEstimate.resx">
+      <DependentUpon>AddEditEstimate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Estimate\EditEstimate.resx">
+      <DependentUpon>EditEstimate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Estimate\EstimateReport.resx">
+      <DependentUpon>EstimateReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Estimate\PreviewEstimate.resx">
+      <DependentUpon>PreviewEstimate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Invoices\AddEditInvoice.resx">
       <DependentUpon>AddEditInvoice.cs</DependentUpon>
@@ -908,6 +944,7 @@
     <Content Include="images\splash\splash-screen.jpg" />
     <Content Include="images\START.JPG" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

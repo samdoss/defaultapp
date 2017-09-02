@@ -38,11 +38,11 @@ namespace ERPWinApp
 					if (!Directory.Exists(appSettingDirectory))
 						Directory.CreateDirectory(appSettingDirectory);
 
-					if (!File.Exists(Path.Combine(appSettingDirectory, "Settings.xml")))
-					{
-						frmSettings dbSettings = new frmSettings();
-						dbSettings.ShowDialog();
-					}
+                    if (!File.Exists(Path.Combine(appSettingDirectory, "Settings.xml")))
+                    {
+                        frmSettings dbSettings = new frmSettings();
+                        dbSettings.ShowDialog();
+                    }
 
 
 					//frmRoleMaster fm = new frmRoleMaster();

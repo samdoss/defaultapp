@@ -321,6 +321,65 @@ namespace ERPWinApp
             catch { }
         }
 
+        private void smnuEstimate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool found = false;
+
+                // get all of the MDI children in an array
+
+                Form[] charr = this.MdiChildren;
+
+                if (charr.Length == 0)      // no child form is opened
+                {
+                    AddEditEstimate childForm = new AddEditEstimate();
+                    childForm.MdiParent = this;
+                    // The StartPosition property is essential
+
+                    // for the location property to work
+
+                    childForm.StartPosition = FormStartPosition.CenterScreen;
+                    childForm.Location = new Point(0, 0);
+                    childForm.Show();
+                }
+                else      // child forms are opened
+                {
+
+                    foreach (Form chform in charr)
+                    {
+                        if (chform.Name == "AddEditEstimate")
+                        // one instance of the form is already opened
+                        {
+                            chform.Activate();
+                            found = true;
+                            break;   // exit loop
+
+                        }
+                        else
+                            found = false;      // make sure flag is set to
+
+                        // false if the form is not found
+
+                    }
+
+                    if (found == false)
+                    {
+                        AddEditEstimate childForm = new AddEditEstimate();
+                        childForm.MdiParent = this;
+                        // The StartPosition property is essential
+
+                        // for the location property to work
+
+                        childForm.StartPosition = FormStartPosition.CenterScreen;
+                        childForm.Location = new Point(0, 0);
+                        childForm.Show();
+                    }
+                }
+            }
+            catch { }
+        }
+
         private void smnuProductMaterial_Click(object sender, EventArgs e)
         {
             try
@@ -1655,6 +1714,9 @@ namespace ERPWinApp
 		                    break;
                         case "smnuStock":
                             tempItem.Click += new EventHandler(smnuStock_Click);
+                            break;
+                        case "smnuEstimate":
+                            tempItem.Click += new EventHandler(smnuEstimate_Click);
                             break;
 
 						case "smnuPurchaseOrder":
