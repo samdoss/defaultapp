@@ -355,12 +355,12 @@ namespace ERPWinApp
 
 
 
-				PdfPTable pdfCompanyTable = CreateCompanyGrid();
-				PdfPTable pdfEstimateTable = CreateEstimateGrid();
-				outerHeader.AddCell(pdfCompanyTable);
-				outerHeader.AddCell(pdfEstimateTable);
+			//	PdfPTable pdfCompanyTable = CreateCompanyGrid();
+			//	PdfPTable pdfEstimateTable = CreateEstimateGrid();
+			//	outerHeader.AddCell(pdfCompanyTable);
+			//	outerHeader.AddCell(pdfEstimateTable);
 
-				outerOuterHeader.AddCell(outerHeader);
+			//	outerOuterHeader.AddCell(outerHeader);
 
 				//Product Table
 				PdfPTable pdfProductTable = CreateProductsGrid();
@@ -1118,8 +1118,8 @@ namespace ERPWinApp
 
 
             phrase = new Phrase();
-            phrase.Add(new Chunk(" Company's PAN     : " , new Font(iTextSharp.text.Font.FontFamily.COURIER, 10, iTextSharp.text.Font.NORMAL)));
-            phrase.Add(new Chunk(MDIForm.CompanyPan.ToString(), new Font(iTextSharp.text.Font.FontFamily.COURIER, 11, iTextSharp.text.Font.BOLD)));
+            //phrase.Add(new Chunk(" Company's PAN     : " , new Font(iTextSharp.text.Font.FontFamily.COURIER, 10, iTextSharp.text.Font.NORMAL)));
+            //phrase.Add(new Chunk(MDIForm.CompanyPan.ToString(), new Font(iTextSharp.text.Font.FontFamily.COURIER, 11, iTextSharp.text.Font.BOLD)));
 
             pdfCell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
             times = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.COURIER, 10, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.DARK_GRAY);
@@ -1130,20 +1130,20 @@ namespace ERPWinApp
 
             phrase = new Phrase();
             phrase.Add(new Chunk("Declaration " + Chunk.NEWLINE + Chunk.NEWLINE, new Font(iTextSharp.text.Font.FontFamily.COURIER, 8, iTextSharp.text.Font.UNDERLINE)));           
-            phrase.Add(new Chunk("We declare that this Purchase Order shows the actual price of the " , new Font(iTextSharp.text.Font.FontFamily.COURIER, 8, iTextSharp.text.Font.NORMAL)));
+            phrase.Add(new Chunk("We declare that this Estimate shows the actual price of the " , new Font(iTextSharp.text.Font.FontFamily.COURIER, 8, iTextSharp.text.Font.NORMAL)));
             phrase.Add(new Chunk("goods described and that all particulars are true and correct.", new Font(iTextSharp.text.Font.FontFamily.COURIER, 8, iTextSharp.text.Font.NORMAL)));
 
             pdfCell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
             times = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.COURIER, 10, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.DARK_GRAY);
             AddCellwithoutBorderPhrase(pdfTaxRupeeTable, phrase, 1, 1, pdfCell, times);
             phrase = new Phrase();
-            phrase.Add(new Chunk("Company's Bank Details " + Chunk.NEWLINE, new Font(iTextSharp.text.Font.FontFamily.COURIER, 8, iTextSharp.text.Font.NORMAL)));
-            phrase.Add(new Chunk("Bank Name :", new Font(iTextSharp.text.Font.FontFamily.COURIER, 8, iTextSharp.text.Font.NORMAL)));
-            phrase.Add(new Chunk(MDIForm.CompanyBankName.ToString() + Chunk.NEWLINE, new Font(iTextSharp.text.Font.FontFamily.COURIER, 8, iTextSharp.text.Font.BOLD)));
-            phrase.Add(new Chunk("A/c No. :", new Font(iTextSharp.text.Font.FontFamily.COURIER, 8, iTextSharp.text.Font.NORMAL)));
-            phrase.Add(new Chunk(MDIForm.CompanyBankAccountNumber.ToString() + Chunk.NEWLINE, new Font(iTextSharp.text.Font.FontFamily.COURIER, 8, iTextSharp.text.Font.BOLD)));
-            phrase.Add(new Chunk("Bank IFSC Code :", new Font(iTextSharp.text.Font.FontFamily.COURIER, 8, iTextSharp.text.Font.NORMAL)));
-            phrase.Add(new Chunk(MDIForm.CompanyBankIfscCode.ToString() + Chunk.NEWLINE, new Font(iTextSharp.text.Font.FontFamily.COURIER, 8, iTextSharp.text.Font.BOLD)));
+            //phrase.Add(new Chunk("Company's Bank Details " + Chunk.NEWLINE, new Font(iTextSharp.text.Font.FontFamily.COURIER, 8, iTextSharp.text.Font.NORMAL)));
+            //phrase.Add(new Chunk("Bank Name :", new Font(iTextSharp.text.Font.FontFamily.COURIER, 8, iTextSharp.text.Font.NORMAL)));
+            //phrase.Add(new Chunk(MDIForm.CompanyBankName.ToString() + Chunk.NEWLINE, new Font(iTextSharp.text.Font.FontFamily.COURIER, 8, iTextSharp.text.Font.BOLD)));
+            //phrase.Add(new Chunk("A/c No. :", new Font(iTextSharp.text.Font.FontFamily.COURIER, 8, iTextSharp.text.Font.NORMAL)));
+            //phrase.Add(new Chunk(MDIForm.CompanyBankAccountNumber.ToString() + Chunk.NEWLINE, new Font(iTextSharp.text.Font.FontFamily.COURIER, 8, iTextSharp.text.Font.BOLD)));
+            //phrase.Add(new Chunk("Bank IFSC Code :", new Font(iTextSharp.text.Font.FontFamily.COURIER, 8, iTextSharp.text.Font.NORMAL)));
+            //phrase.Add(new Chunk(MDIForm.CompanyBankIfscCode.ToString() + Chunk.NEWLINE, new Font(iTextSharp.text.Font.FontFamily.COURIER, 8, iTextSharp.text.Font.BOLD)));
 
             pdfCell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
             times = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.COURIER, 8, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.DARK_GRAY);
@@ -1164,17 +1164,17 @@ namespace ERPWinApp
             pdfTaxRupeeTable.SetWidths(widths);
             
             
-            phrase = new Phrase();
-            phrase.Add(new Chunk("Customer's Seal and Signature " + Chunk.NEWLINE + Chunk.NEWLINE, new Font(iTextSharp.text.Font.FontFamily.COURIER, 8, iTextSharp.text.Font.NORMAL)));
+            //phrase = new Phrase();
+            //phrase.Add(new Chunk("Customer's Seal and Signature " + Chunk.NEWLINE + Chunk.NEWLINE, new Font(iTextSharp.text.Font.FontFamily.COURIER, 8, iTextSharp.text.Font.NORMAL)));
           
-            pdfCell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
-            times = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.COURIER, 10, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.DARK_GRAY);
-            AddCellphrase(pdfTaxRupeeTable, phrase, 1, 1, pdfCell, times);
-            pdfCell.HorizontalAlignment = PdfPCell.ALIGN_RIGHT;
-            phrase = new Phrase();
-            phrase.Add(new Chunk("For " + MDIForm._CompanyName + Chunk.NEWLINE + Chunk.NEWLINE + Chunk.NEWLINE, new Font(iTextSharp.text.Font.FontFamily.COURIER, 8, iTextSharp.text.Font.NORMAL)));
-            phrase.Add(new Chunk("Authorised Signatory " + MDIForm._CompanyName + Chunk.NEWLINE, new Font(iTextSharp.text.Font.FontFamily.COURIER, 8, iTextSharp.text.Font.NORMAL)));
-            pdfCell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+            //pdfCell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+            //times = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.COURIER, 10, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.DARK_GRAY);
+            //AddCellphrase(pdfTaxRupeeTable, phrase, 1, 1, pdfCell, times);
+            //pdfCell.HorizontalAlignment = PdfPCell.ALIGN_RIGHT;
+            //phrase = new Phrase();
+            //phrase.Add(new Chunk("For " + MDIForm._CompanyName + Chunk.NEWLINE + Chunk.NEWLINE + Chunk.NEWLINE, new Font(iTextSharp.text.Font.FontFamily.COURIER, 8, iTextSharp.text.Font.NORMAL)));
+            //phrase.Add(new Chunk("Authorised Signatory " + MDIForm._CompanyName + Chunk.NEWLINE, new Font(iTextSharp.text.Font.FontFamily.COURIER, 8, iTextSharp.text.Font.NORMAL)));
+            //pdfCell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
             times = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.COURIER, 8, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.DARK_GRAY);
             AddCellphrase(pdfTaxRupeeTable, phrase, 1, 1, pdfCell, times);
 
@@ -1815,7 +1815,7 @@ namespace ERPWinApp
 															  CustomImages.GetDialogImage(CustomImages.eCustomDialogImages.Success));
 
 				btnPreviewEstimate_Click(sender, e);
-				//this.Close();
+				this.Close();
 			}
 			catch (Exception ex)
 			{
