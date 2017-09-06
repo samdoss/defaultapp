@@ -87,8 +87,8 @@ namespace ERPWinApp
                 ActiveUsers _activeUsers = new ActiveUsers();
                 if (!FormValidation()) { return; }
                 DPassword = txtPassword.Text;
-
-                TransactionResult result = login.ValidateUser(txtUserName.Text.ToString(), EPassword, chkRemember.Checked);
+                string appSettingDirectory = Common.GetAllUserPath();
+                TransactionResult result = login.ValidateUser(appSettingDirectory, txtUserName.Text.ToString(), EPassword, chkRemember.Checked);
                 if (result.Status == TransactionStatus.Success)
                 {
                     key = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(txtUserName.Text, true);
@@ -116,12 +116,13 @@ namespace ERPWinApp
                     }
 
                     this.DialogResult = DialogResult.OK;
-                    btnCancel_Click(sender, e);
                     MDIForm.UserID = int.Parse(login.UserID.ToString());
 
                     key = Microsoft.Win32.Registry.CurrentUser.CreateSubKey(txtUserName.Text);
                     key.SetValue(txtUserName.Text, MDIForm.UserID);
                     key.Close();
+                    btnCancel_Click(sender, e);
+                    
 
                 }
                 else
@@ -186,7 +187,8 @@ namespace ERPWinApp
                 }
 
                 Login login = new Login();
-                txtUserName.Text = login.ReadDefaultUser();
+                string appSettingDirectory = Common.GetAllUserPath();
+                txtUserName.Text = login.ReadDefaultUser(appSettingDirectory);
                 if (txtUserName.Text.Trim() != "")
                 {
                     chkRemember.Checked = true;

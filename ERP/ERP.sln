@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{99780F
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ERPSetupWizard", "ERPSetupWizard\ERPSetupWizard.vdproj", "{259C81DF-992F-46ED-9EC6-1CEFA91E8CC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,8 @@ Global
 		{EF59C3DA-9C16-4F25-BBDE-093CE8472998}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF59C3DA-9C16-4F25-BBDE-093CE8472998}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF59C3DA-9C16-4F25-BBDE-093CE8472998}.Release|Any CPU.Build.0 = Release|Any CPU
+		{259C81DF-992F-46ED-9EC6-1CEFA91E8CC0}.Debug|Any CPU.ActiveCfg = Debug
+		{259C81DF-992F-46ED-9EC6-1CEFA91E8CC0}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -66,9 +66,9 @@ namespace ERP.DataLayer
         { 
         }
 
-        private void WriteDefaultUser(string userName, bool Remember)
+        private void WriteDefaultUser(string logFileLocation, string userName, bool Remember)
         {
-             FileInfo objFile = new FileInfo("user.log");
+             FileInfo objFile = new FileInfo(Path.Combine(logFileLocation, "user.log"));
             StreamWriter objSW = objFile.CreateText();
             if (!Remember) { userName = ""; }
             objSW.WriteLine(userName);
@@ -79,13 +79,13 @@ namespace ERP.DataLayer
 
         #region Public Methods
 
-        public string ReadDefaultUser()
+        public string ReadDefaultUser(string logFileLocation)
         {
             string read = null;
             string username = string.Empty;
             try
             {
-                StreamReader st = File.OpenText("user.log");
+                StreamReader st = File.OpenText( Path.Combine(logFileLocation, "user.log"));
                 if ((read = st.ReadLine()) != null)
                 {
                     username = read;
@@ -96,7 +96,7 @@ namespace ERP.DataLayer
             return username;
         }
 
-        public TransactionResult ValidateUser(string userName, string password, bool Remember)
+        public TransactionResult ValidateUser(string logfileLocation,string userName, string password, bool Remember)
         {
             bool validUser = false;
             Database db = CustomDatabaseFactory.CreateDatabase(_ApplicationConnection.ConnectionString);
@@ -113,7 +113,7 @@ namespace ERP.DataLayer
                     UserName = dataReader.GetString(dataReader.GetOrdinal("UserName"));
                     password = dataReader.GetString(dataReader.GetOrdinal("Password"));
                     UserID = dataReader.GetInt32(dataReader.GetOrdinal("UserID"));
-                    WriteDefaultUser(UserName,Remember);
+                    WriteDefaultUser(logfileLocation, UserName, Remember);
                     validUser = true;
                 }
             }
