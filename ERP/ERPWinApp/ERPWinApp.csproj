@@ -347,6 +347,18 @@
     <Compile Include="MDIForm.designer.cs">
       <DependentUpon>MDIForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Bank\BankDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Bank\BankDetails.designer.cs">
+      <DependentUpon>BankDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Bank\frmFindBankDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Bank\frmFindBankDetails.designer.cs">
+      <DependentUpon>frmFindBankDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Client\AddEditClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -376,6 +388,18 @@
     </Compile>
     <Compile Include="Modules\Delivery\frmDelivery.Designer.cs">
       <DependentUpon>frmDelivery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Employee\AddEditEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Employee\AddEditEmployee.designer.cs">
+      <DependentUpon>AddEditEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Employee\EmployeeReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Employee\EmployeeReport.designer.cs">
+      <DependentUpon>EmployeeReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\Estimate\AddEditEstimate.cs">
       <SubType>Form</SubType>
@@ -600,6 +624,12 @@
     <EmbeddedResource Include="MDIForm.resx">
       <DependentUpon>MDIForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Bank\BankDetails.resx">
+      <DependentUpon>BankDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Bank\frmFindBankDetails.resx">
+      <DependentUpon>frmFindBankDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\Client\AddEditClient.resx">
       <DependentUpon>AddEditClient.cs</DependentUpon>
     </EmbeddedResource>
@@ -614,6 +644,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Delivery\frmDelivery.resx">
       <DependentUpon>frmDelivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Employee\AddEditEmployee.resx">
+      <DependentUpon>AddEditEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Employee\EmployeeReport.resx">
+      <DependentUpon>EmployeeReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Estimate\AddEditEstimate.resx">
       <DependentUpon>AddEditEstimate.cs</DependentUpon>

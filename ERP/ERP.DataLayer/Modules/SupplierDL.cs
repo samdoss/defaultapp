@@ -705,7 +705,7 @@ namespace ERP.DataLayer
 		    try
 		    {
 			    Database database = CustomDatabaseFactory.CreateDatabase(_myConnection.ConnectionString);
-				System.Data.Common.DbCommand dbCommand = database.GetStoredProcCommand("spGetSupplierDropDownList");
+                System.Data.Common.DbCommand dbCommand = database.GetStoredProcCommand("spGetSupplierDropDownList");
 			    dbCommand.Parameters.Clear();
 			    dbCommand.CommandTimeout = 300;
 			    database.AddInParameter(dbCommand, "CompanyID", System.Data.DbType.Int32, companyID);
@@ -713,7 +713,7 @@ namespace ERP.DataLayer
 		    }
 		    catch (System.Exception exception1)
 		    {
-			    ErrorLog.LogErrorMessageToDB("", "Supplier.cs", "GetSupplierList", exception1.Message.ToString());
+                ErrorLog.LogErrorMessageToDB("", "Supplier.cs", "GetSupplierDropDownList", exception1.Message.ToString());
 			    throw;
 		    }
 		    return dataSet;

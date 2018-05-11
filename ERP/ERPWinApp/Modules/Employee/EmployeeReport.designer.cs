@@ -1,6 +1,6 @@
 ﻿namespace ERPWinApp
 {
-    partial class SuppliersReport
+    partial class EmployeesReport
     {
         /// <summary>
         /// Required designer variable.
@@ -31,31 +31,31 @@
             this.tlpSearchcCient = new System.Windows.Forms.TableLayoutPanel();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblSearchSupplier = new System.Windows.Forms.Label();
-            this.lblSupplierName = new System.Windows.Forms.Label();
+            this.lblSearchEmployee = new System.Windows.Forms.Label();
+            this.lblEmployeeName = new System.Windows.Forms.Label();
             this.lblContactName = new System.Windows.Forms.Label();
             this.txtContactName = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.lblPhone = new System.Windows.Forms.Label();
-            this.pnlSupplierReport = new System.Windows.Forms.Panel();
+            this.pnlEmployeeReport = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
-            this.cmbSupplierName = new System.Windows.Forms.ComboBox();
+            this.cmbEmployeeName = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblResults = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.btnNewSupplier = new System.Windows.Forms.Button();
-            this.dgvSupplierResult = new System.Windows.Forms.DataGridView();
+            this.btnNewEmployee = new System.Windows.Forms.Button();
+            this.dgvEmployeeResult = new System.Windows.Forms.DataGridView();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContactName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BillingAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrivateSupplierDetails = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrivateEmployeeDetails = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlPager = new System.Windows.Forms.Panel();
             this.btnRight = new System.Windows.Forms.Button();
             this.btnLeft = new System.Windows.Forms.Button();
@@ -69,10 +69,10 @@
             this.lblUserMsg = new System.Windows.Forms.Label();
             this.lblCaption = new System.Windows.Forms.Label();
             this.tlpSearchcCient.SuspendLayout();
-            this.pnlSupplierReport.SuspendLayout();
+            this.pnlEmployeeReport.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSupplierResult)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeResult)).BeginInit();
             this.pnlPager.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,14 +86,14 @@
             this.tlpSearchcCient.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.57143F));
             this.tlpSearchcCient.Controls.Add(this.lblEmail, 3, 1);
             this.tlpSearchcCient.Controls.Add(this.txtEmail, 4, 1);
-            this.tlpSearchcCient.Controls.Add(this.lblSearchSupplier, 0, 0);
-            this.tlpSearchcCient.Controls.Add(this.lblSupplierName, 1, 1);
+            this.tlpSearchcCient.Controls.Add(this.lblSearchEmployee, 0, 0);
+            this.tlpSearchcCient.Controls.Add(this.lblEmployeeName, 1, 1);
             this.tlpSearchcCient.Controls.Add(this.lblContactName, 1, 2);
             this.tlpSearchcCient.Controls.Add(this.txtContactName, 2, 2);
             this.tlpSearchcCient.Controls.Add(this.txtPhone, 4, 2);
             this.tlpSearchcCient.Controls.Add(this.lblPhone, 3, 2);
-            this.tlpSearchcCient.Controls.Add(this.pnlSupplierReport, 2, 3);
-            this.tlpSearchcCient.Controls.Add(this.cmbSupplierName, 2, 1);
+            this.tlpSearchcCient.Controls.Add(this.pnlEmployeeReport, 2, 3);
+            this.tlpSearchcCient.Controls.Add(this.cmbEmployeeName, 2, 1);
             this.tlpSearchcCient.Location = new System.Drawing.Point(12, 89);
             this.tlpSearchcCient.Name = "tlpSearchcCient";
             this.tlpSearchcCient.RowCount = 4;
@@ -125,27 +125,27 @@
             this.txtEmail.Size = new System.Drawing.Size(251, 23);
             this.txtEmail.TabIndex = 7;
             // 
-            // lblSearchSupplier
+            // lblSearchEmployee
             // 
-            this.lblSearchSupplier.AutoSize = true;
-            this.lblSearchSupplier.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchSupplier.Location = new System.Drawing.Point(5, 10);
-            this.lblSearchSupplier.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
-            this.lblSearchSupplier.Name = "lblSearchSupplier";
-            this.lblSearchSupplier.Size = new System.Drawing.Size(115, 19);
-            this.lblSearchSupplier.TabIndex = 0;
-            this.lblSearchSupplier.Text = "Search Suppliers";
+            this.lblSearchEmployee.AutoSize = true;
+            this.lblSearchEmployee.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchEmployee.Location = new System.Drawing.Point(5, 10);
+            this.lblSearchEmployee.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
+            this.lblSearchEmployee.Name = "lblSearchEmployee";
+            this.lblSearchEmployee.Size = new System.Drawing.Size(115, 19);
+            this.lblSearchEmployee.TabIndex = 0;
+            this.lblSearchEmployee.Text = "Search Employees";
             // 
-            // lblSupplierName
+            // lblEmployeeName
             // 
-            this.lblSupplierName.AutoSize = true;
-            this.lblSupplierName.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblSupplierName.Location = new System.Drawing.Point(140, 46);
-            this.lblSupplierName.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
-            this.lblSupplierName.Name = "lblSupplierName";
-            this.lblSupplierName.Size = new System.Drawing.Size(87, 15);
-            this.lblSupplierName.TabIndex = 1;
-            this.lblSupplierName.Text = "Supplier Name";
+            this.lblEmployeeName.AutoSize = true;
+            this.lblEmployeeName.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lblEmployeeName.Location = new System.Drawing.Point(140, 46);
+            this.lblEmployeeName.Margin = new System.Windows.Forms.Padding(5, 10, 5, 5);
+            this.lblEmployeeName.Name = "lblEmployeeName";
+            this.lblEmployeeName.Size = new System.Drawing.Size(87, 15);
+            this.lblEmployeeName.TabIndex = 1;
+            this.lblEmployeeName.Text = "Employee Name";
             // 
             // lblContactName
             // 
@@ -187,15 +187,15 @@
             this.lblPhone.TabIndex = 4;
             this.lblPhone.Text = "Phone";
             // 
-            // pnlSupplierReport
+            // pnlEmployeeReport
             // 
-            this.tlpSearchcCient.SetColumnSpan(this.pnlSupplierReport, 2);
-            this.pnlSupplierReport.Controls.Add(this.btnSearch);
-            this.pnlSupplierReport.Controls.Add(this.btnReset);
-            this.pnlSupplierReport.Location = new System.Drawing.Point(273, 111);
-            this.pnlSupplierReport.Name = "pnlSupplierReport";
-            this.pnlSupplierReport.Size = new System.Drawing.Size(399, 31);
-            this.pnlSupplierReport.TabIndex = 11;
+            this.tlpSearchcCient.SetColumnSpan(this.pnlEmployeeReport, 2);
+            this.pnlEmployeeReport.Controls.Add(this.btnSearch);
+            this.pnlEmployeeReport.Controls.Add(this.btnReset);
+            this.pnlEmployeeReport.Location = new System.Drawing.Point(273, 111);
+            this.pnlEmployeeReport.Name = "pnlEmployeeReport";
+            this.pnlEmployeeReport.Size = new System.Drawing.Size(399, 31);
+            this.pnlEmployeeReport.TabIndex = 11;
             // 
             // btnSearch
             // 
@@ -219,18 +219,18 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // cmbSupplierName
+            // cmbEmployeeName
             // 
-            this.cmbSupplierName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbSupplierName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbSupplierName.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.cmbSupplierName.FormattingEnabled = true;
-            this.cmbSupplierName.IntegralHeight = false;
-            this.cmbSupplierName.Location = new System.Drawing.Point(276, 41);
-            this.cmbSupplierName.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.cmbSupplierName.Name = "cmbSupplierName";
-            this.cmbSupplierName.Size = new System.Drawing.Size(249, 23);
-            this.cmbSupplierName.TabIndex = 28;
+            this.cmbEmployeeName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbEmployeeName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbEmployeeName.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.cmbEmployeeName.FormattingEnabled = true;
+            this.cmbEmployeeName.IntegralHeight = false;
+            this.cmbEmployeeName.Location = new System.Drawing.Point(276, 41);
+            this.cmbEmployeeName.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.cmbEmployeeName.Name = "cmbEmployeeName";
+            this.cmbEmployeeName.Size = new System.Drawing.Size(249, 23);
+            this.cmbEmployeeName.TabIndex = 28;
             // 
             // tableLayoutPanel1
             // 
@@ -239,8 +239,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.13587F));
             this.tableLayoutPanel1.Controls.Add(this.lblResults, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btnNewSupplier, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.dgvSupplierResult, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btnNewEmployee, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dgvEmployeeResult, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.pnlPager, 0, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 235);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -303,42 +303,42 @@
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // btnNewSupplier
+            // btnNewEmployee
             // 
-            this.btnNewSupplier.Location = new System.Drawing.Point(866, 40);
-            this.btnNewSupplier.Margin = new System.Windows.Forms.Padding(82, 10, 5, 0);
-            this.btnNewSupplier.Name = "btnNewSupplier";
-            this.btnNewSupplier.Size = new System.Drawing.Size(75, 23);
-            this.btnNewSupplier.TabIndex = 11;
-            this.btnNewSupplier.Text = "New Supplier";
-            this.btnNewSupplier.UseVisualStyleBackColor = true;
-            this.btnNewSupplier.Click += new System.EventHandler(this.btnNewSupplier_Click);
+            this.btnNewEmployee.Location = new System.Drawing.Point(866, 40);
+            this.btnNewEmployee.Margin = new System.Windows.Forms.Padding(82, 10, 5, 0);
+            this.btnNewEmployee.Name = "btnNewEmployee";
+            this.btnNewEmployee.Size = new System.Drawing.Size(75, 23);
+            this.btnNewEmployee.TabIndex = 11;
+            this.btnNewEmployee.Text = "New Employee";
+            this.btnNewEmployee.UseVisualStyleBackColor = true;
+            this.btnNewEmployee.Click += new System.EventHandler(this.btnNewEmployee_Click);
             // 
-            // dgvSupplierResult
+            // dgvEmployeeResult
             // 
-            this.dgvSupplierResult.AllowUserToAddRows = false;
-            this.dgvSupplierResult.AllowUserToDeleteRows = false;
-            this.dgvSupplierResult.AllowUserToResizeColumns = false;
-            this.dgvSupplierResult.AllowUserToResizeRows = false;
-            this.dgvSupplierResult.BackgroundColor = System.Drawing.Color.White;
-            this.dgvSupplierResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvSupplierResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvEmployeeResult.AllowUserToAddRows = false;
+            this.dgvEmployeeResult.AllowUserToDeleteRows = false;
+            this.dgvEmployeeResult.AllowUserToResizeColumns = false;
+            this.dgvEmployeeResult.AllowUserToResizeRows = false;
+            this.dgvEmployeeResult.BackgroundColor = System.Drawing.Color.White;
+            this.dgvEmployeeResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvEmployeeResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.No,
-            this.SupplierName,
+            this.EmployeeName,
             this.ContactName,
             this.BillingAddress,
             this.Email,
             this.Phone,
-            this.PrivateSupplierDetails});
-            this.tableLayoutPanel1.SetColumnSpan(this.dgvSupplierResult, 2);
-            this.dgvSupplierResult.Location = new System.Drawing.Point(3, 70);
-            this.dgvSupplierResult.Name = "dgvSupplierResult";
-            this.dgvSupplierResult.ReadOnly = true;
-            this.dgvSupplierResult.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvSupplierResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSupplierResult.Size = new System.Drawing.Size(941, 222);
-            this.dgvSupplierResult.TabIndex = 27;
-            this.dgvSupplierResult.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSupplierResult_CellClick);
+            this.PrivateEmployeeDetails});
+            this.tableLayoutPanel1.SetColumnSpan(this.dgvEmployeeResult, 2);
+            this.dgvEmployeeResult.Location = new System.Drawing.Point(3, 70);
+            this.dgvEmployeeResult.Name = "dgvEmployeeResult";
+            this.dgvEmployeeResult.ReadOnly = true;
+            this.dgvEmployeeResult.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvEmployeeResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEmployeeResult.Size = new System.Drawing.Size(941, 222);
+            this.dgvEmployeeResult.TabIndex = 27;
+            this.dgvEmployeeResult.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployeeResult_CellClick);
             // 
             // No
             // 
@@ -350,15 +350,15 @@
             this.No.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.No.Width = 50;
             // 
-            // SupplierName
+            // EmployeeName
             // 
-            this.SupplierName.DataPropertyName = "SupplierName";
-            this.SupplierName.Frozen = true;
-            this.SupplierName.HeaderText = "Supplier Name";
-            this.SupplierName.Name = "SupplierName";
-            this.SupplierName.ReadOnly = true;
-            this.SupplierName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.SupplierName.Width = 150;
+            this.EmployeeName.DataPropertyName = "EmployeeName";
+            this.EmployeeName.Frozen = true;
+            this.EmployeeName.HeaderText = "Employee Name";
+            this.EmployeeName.Name = "EmployeeName";
+            this.EmployeeName.ReadOnly = true;
+            this.EmployeeName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.EmployeeName.Width = 150;
             // 
             // ContactName
             // 
@@ -401,16 +401,16 @@
             this.Phone.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Phone.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // PrivateSupplierDetails
+            // PrivateEmployeeDetails
             // 
-            this.PrivateSupplierDetails.DataPropertyName = "PrivateSupplierDetails";
-            this.PrivateSupplierDetails.Frozen = true;
-            this.PrivateSupplierDetails.HeaderText = "Private Details";
-            this.PrivateSupplierDetails.Name = "PrivateSupplierDetails";
-            this.PrivateSupplierDetails.ReadOnly = true;
-            this.PrivateSupplierDetails.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.PrivateSupplierDetails.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.PrivateSupplierDetails.Width = 150;
+            this.PrivateEmployeeDetails.DataPropertyName = "PrivateEmployeeDetails";
+            this.PrivateEmployeeDetails.Frozen = true;
+            this.PrivateEmployeeDetails.HeaderText = "Private Details";
+            this.PrivateEmployeeDetails.Name = "PrivateEmployeeDetails";
+            this.PrivateEmployeeDetails.ReadOnly = true;
+            this.PrivateEmployeeDetails.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.PrivateEmployeeDetails.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.PrivateEmployeeDetails.Width = 150;
             // 
             // pnlPager
             // 
@@ -533,10 +533,10 @@
             this.lblCaption.Name = "lblCaption";
             this.lblCaption.Size = new System.Drawing.Size(981, 59);
             this.lblCaption.TabIndex = 260;
-            this.lblCaption.Text = "Supplier";
+            this.lblCaption.Text = "Employee";
             this.lblCaption.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // SuppliersReport
+            // EmployeesReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -552,20 +552,20 @@
             this.ForeColor = System.Drawing.Color.DarkCyan;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MinimizeBox = false;
-            this.Name = "SuppliersReport";
+            this.Name = "EmployeesReport";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Suppliers";
+            this.Text = "Employees";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.SuppliersReport_Load);
+            this.Load += new System.EventHandler(this.EmployeesReport_Load);
             this.tlpSearchcCient.ResumeLayout(false);
             this.tlpSearchcCient.PerformLayout();
-            this.pnlSupplierReport.ResumeLayout(false);
+            this.pnlEmployeeReport.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSupplierResult)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeResult)).EndInit();
             this.pnlPager.ResumeLayout(false);
             this.pnlPager.PerformLayout();
             this.ResumeLayout(false);
@@ -576,11 +576,11 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tlpSearchcCient;
-        private System.Windows.Forms.Label lblSearchSupplier;
+        private System.Windows.Forms.Label lblSearchEmployee;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblContactName;
-        private System.Windows.Forms.Label lblSupplierName;
+        private System.Windows.Forms.Label lblEmployeeName;
         private System.Windows.Forms.TextBox txtContactName;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label lblPhone;
@@ -588,14 +588,14 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblResults;
-        private System.Windows.Forms.Button btnNewSupplier;
-        private System.Windows.Forms.DataGridView dgvSupplierResult;
-        private System.Windows.Forms.Panel pnlSupplierReport;
+        private System.Windows.Forms.Button btnNewEmployee;
+        private System.Windows.Forms.DataGridView dgvEmployeeResult;
+        private System.Windows.Forms.Panel pnlEmployeeReport;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.ComboBox cmbSupplierName;
+        private System.Windows.Forms.ComboBox cmbEmployeeName;
         private System.Windows.Forms.Panel pnlPager;
         private System.Windows.Forms.Label lblPaging;
         private System.Windows.Forms.Button btnApply;
@@ -606,12 +606,12 @@
         private System.Windows.Forms.Button btnRight;
         private System.Windows.Forms.Button btnLeft;
         private System.Windows.Forms.DataGridViewTextBoxColumn No;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ContactName;
         private System.Windows.Forms.DataGridViewTextBoxColumn BillingAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrivateSupplierDetails;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrivateEmployeeDetails;
 		private System.Windows.Forms.Label lblMsgColor;
 		private System.Windows.Forms.Label lblUserMsg;
 		private System.Windows.Forms.Label lblCaption;
