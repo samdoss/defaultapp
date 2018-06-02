@@ -41,6 +41,7 @@ namespace ERPWinApp
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
             this.ApplicationHelpProvider = new System.Windows.Forms.HelpProvider();
+            this.btnNewChequeProcess = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtSearchText
@@ -60,7 +61,7 @@ namespace ERPWinApp
             this.lblName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Location = new System.Drawing.Point(12, 93);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(375, 16);
+            this.lblName.Size = new System.Drawing.Size(225, 16);
             this.lblName.TabIndex = 198;
             this.lblName.Text = "&Search By Column name in Fields";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -130,32 +131,43 @@ namespace ERPWinApp
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnCancel.BackColor = System.Drawing.SystemColors.Control;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("Verdana", 9.75F);
             this.btnCancel.Location = new System.Drawing.Point(723, 423);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(63, 27);
             this.btnCancel.TabIndex = 3;
-            this.btnCancel.Text = "&Cancel";
+            this.btnCancel.Text = "&Close";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnOk
             // 
-            this.btnOk.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnOk.BackColor = System.Drawing.SystemColors.Control;
             this.btnOk.Font = new System.Drawing.Font("Verdana", 9.75F);
             this.btnOk.Location = new System.Drawing.Point(654, 423);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(63, 27);
             this.btnOk.TabIndex = 2;
-            this.btnOk.Text = "&OK";
+            this.btnOk.Text = "&View";
             this.btnOk.UseVisualStyleBackColor = false;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // ApplicationHelpProvider
             // 
             this.ApplicationHelpProvider.HelpNamespace = "\\Help\\HelpFile.chm";
+            // 
+            // btnNewChequeProcess
+            // 
+            this.btnNewChequeProcess.Location = new System.Drawing.Point(709, 115);
+            this.btnNewChequeProcess.Margin = new System.Windows.Forms.Padding(82, 10, 5, 0);
+            this.btnNewChequeProcess.Name = "btnNewChequeProcess";
+            this.btnNewChequeProcess.Size = new System.Drawing.Size(75, 23);
+            this.btnNewChequeProcess.TabIndex = 204;
+            this.btnNewChequeProcess.Text = "New ChequeProcess";
+            this.btnNewChequeProcess.UseVisualStyleBackColor = true;
+            this.btnNewChequeProcess.Click += new System.EventHandler(this.btnNewChequeProcess_Click);
             // 
             // frmFindBankDetails
             // 
@@ -165,6 +177,7 @@ namespace ERPWinApp
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(798, 462);
             this.ControlBox = false;
+            this.Controls.Add(this.btnNewChequeProcess);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.listUser);
@@ -200,6 +213,7 @@ namespace ERPWinApp
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOk;
         internal System.Windows.Forms.HelpProvider ApplicationHelpProvider;
+        private System.Windows.Forms.Button btnNewChequeProcess;
 
     }
 }

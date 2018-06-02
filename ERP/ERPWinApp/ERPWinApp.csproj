@@ -359,6 +359,18 @@
     <Compile Include="Modules\Bank\frmFindBankDetails.designer.cs">
       <DependentUpon>frmFindBankDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\ChequeProcess\AddEditChequeProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ChequeProcess\AddEditChequeProcess.designer.cs">
+      <DependentUpon>AddEditChequeProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ChequeProcess\ChequeProcessReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\ChequeProcess\ChequeProcessReport.designer.cs">
+      <DependentUpon>ChequeProcessReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Client\AddEditClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -383,6 +395,19 @@
     <Compile Include="Modules\Company\EditCompanyDetails.Designer.cs">
       <DependentUpon>EditCompanyDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\CreditDebit\AddEditCreditDebit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\CreditDebit\AddEditCreditDebit.designer.cs">
+      <DependentUpon>AddEditCreditDebit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CreditDebit\CreditDebitReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\CreditDebit\CreditDebitReport.designer.cs">
+      <DependentUpon>CreditDebitReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CreditDebit\gistfile1.cs" />
     <Compile Include="Modules\Delivery\frmDelivery.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -395,11 +420,11 @@
     <Compile Include="Modules\Employee\AddEditEmployee.designer.cs">
       <DependentUpon>AddEditEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Employee\EmployeeReport.cs">
+    <Compile Include="Modules\Employee\EmployeesReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\Employee\EmployeeReport.designer.cs">
-      <DependentUpon>EmployeeReport.cs</DependentUpon>
+    <Compile Include="Modules\Employee\EmployeesReport.designer.cs">
+      <DependentUpon>EmployeesReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\Estimate\AddEditEstimate.cs">
       <SubType>Form</SubType>
@@ -630,6 +655,12 @@
     <EmbeddedResource Include="Modules\Bank\frmFindBankDetails.resx">
       <DependentUpon>frmFindBankDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ChequeProcess\AddEditChequeProcess.resx">
+      <DependentUpon>AddEditChequeProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ChequeProcess\ChequeProcessReport.resx">
+      <DependentUpon>ChequeProcessReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\Client\AddEditClient.resx">
       <DependentUpon>AddEditClient.cs</DependentUpon>
     </EmbeddedResource>
@@ -642,14 +673,20 @@
     <EmbeddedResource Include="Modules\Company\EditCompanyDetails.resx">
       <DependentUpon>EditCompanyDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\CreditDebit\AddEditCreditDebit.resx">
+      <DependentUpon>AddEditCreditDebit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\CreditDebit\CreditDebitReport.resx">
+      <DependentUpon>CreditDebitReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\Delivery\frmDelivery.resx">
       <DependentUpon>frmDelivery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Employee\AddEditEmployee.resx">
       <DependentUpon>AddEditEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Employee\EmployeeReport.resx">
-      <DependentUpon>EmployeeReport.cs</DependentUpon>
+    <EmbeddedResource Include="Modules\Employee\EmployeesReport.resx">
+      <DependentUpon>EmployeesReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Estimate\AddEditEstimate.resx">
       <DependentUpon>AddEditEstimate.cs</DependentUpon>

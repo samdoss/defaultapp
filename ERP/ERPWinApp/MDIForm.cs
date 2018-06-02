@@ -39,11 +39,11 @@ namespace ERPWinApp
             set { _userID = value; }
         }
 
-	    public static int CompanyID
-	    {
-			get { return _companyID; }
-			set { _companyID = value; }
-	    }
+        public static int CompanyID
+        {
+            get { return _companyID; }
+            set { _companyID = value; }
+        }
 
         public static string UserNames
         {
@@ -51,7 +51,7 @@ namespace ERPWinApp
             set { _userNames = value; }
         }
 
-		public static string CurrencySymbol { get; set; }
+        public static string CurrencySymbol { get; set; }
 
         #endregion
 
@@ -86,7 +86,7 @@ namespace ERPWinApp
                 lblStatusSystemDate.Text = _serverDateTime.ToString("dd/MM/yyyy");
 
                 tstripCustomers.Visible = false;
-                
+
                 tstripCustomersBlank1.Width = tstripCustomersBlank1.Width + _imgWidth;
 
                 tstripHelp.Visible = false;
@@ -99,7 +99,7 @@ namespace ERPWinApp
 
                 Company activeCompany = (from company in companyService.GetAllCompanyList()
                                                         .Where(v => v.Status == true)
-                                                         select company).SingleOrDefault();
+                                         select company).SingleOrDefault();
 
                 SetControlsWithData(activeCompany);
                 SetMenuForUser();
@@ -130,18 +130,18 @@ namespace ERPWinApp
 
             CompanyID = activeCompany.CompanyId;
             _CompanyName = activeCompany.CompanyName;
-	        CurrencySymbol = activeCompany.Currency;
+            CurrencySymbol = activeCompany.Currency;
             CompanyPan = activeCompany.PAN;
             CompanyBankName = activeCompany.BankName;
             CompanyBankAccountNumber = activeCompany.BankAccountNumber;
             CompanyBankIfscCode = activeCompany.BankIFSC;
 
 
-	        //txtAddress.Text = activeCompany.Address;
+            //txtAddress.Text = activeCompany.Address;
 
         }
         //Doctor Menu 
-        
+
 
         //Registration Menu
         private void smnuClients_Click(object sender, EventArgs e)
@@ -452,7 +452,7 @@ namespace ERPWinApp
 
                 if (charr.Length == 0)      // no child form is opened
                 {
-					AddEditInvoice childForm = new AddEditInvoice();
+                    AddEditInvoice childForm = new AddEditInvoice();
                     childForm.MdiParent = this;
                     // The StartPosition property is essential
 
@@ -467,7 +467,7 @@ namespace ERPWinApp
 
                     foreach (Form chform in charr)
                     {
-						if (chform.Name == "AddEditInvoice")
+                        if (chform.Name == "AddEditInvoice")
                         // one instance of the form is already opened
                         {
                             chform.Activate();
@@ -484,7 +484,7 @@ namespace ERPWinApp
 
                     if (found == false)
                     {
-						AddEditInvoice childForm = new AddEditInvoice();
+                        AddEditInvoice childForm = new AddEditInvoice();
                         childForm.MdiParent = this;
                         // The StartPosition property is essential
 
@@ -499,184 +499,184 @@ namespace ERPWinApp
             catch { }
         }
 
-		private void smnuInvoicesReport_Click(object sender, EventArgs e)
-	    {
-		    try
-		    {
-			    bool found = false;
+        private void smnuInvoicesReport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool found = false;
 
-			    // get all of the MDI children in an array
+                // get all of the MDI children in an array
 
-			    Form[] charr = this.MdiChildren;
+                Form[] charr = this.MdiChildren;
 
-			    if (charr.Length == 0)      // no child form is opened
-			    {
-					InvoicesReport childForm = new InvoicesReport();
-				    childForm.MdiParent = this;
-				    // The StartPosition property is essential
+                if (charr.Length == 0)      // no child form is opened
+                {
+                    InvoicesReport childForm = new InvoicesReport();
+                    childForm.MdiParent = this;
+                    // The StartPosition property is essential
 
-				    // for the location property to work
+                    // for the location property to work
 
-				    childForm.StartPosition = FormStartPosition.CenterScreen;
-				    childForm.Location = new Point(0, 0);
-				    childForm.Show();
-			    }
-			    else      // child forms are opened
-			    {
+                    childForm.StartPosition = FormStartPosition.CenterScreen;
+                    childForm.Location = new Point(0, 0);
+                    childForm.Show();
+                }
+                else      // child forms are opened
+                {
 
-				    foreach (Form chform in charr)
-				    {
-						if (chform.Name == "InvoicesReport")
-						    // one instance of the form is already opened
-					    {
-						    chform.Activate();
-						    found = true;
-						    break;   // exit loop
+                    foreach (Form chform in charr)
+                    {
+                        if (chform.Name == "InvoicesReport")
+                        // one instance of the form is already opened
+                        {
+                            chform.Activate();
+                            found = true;
+                            break;   // exit loop
 
-					    }
-					    else
-						    found = false;      // make sure flag is set to
+                        }
+                        else
+                            found = false;      // make sure flag is set to
 
-					    // false if the form is not found
+                        // false if the form is not found
 
-				    }
+                    }
 
-				    if (found == false)
-				    {
-					    InvoicesReport childForm = new InvoicesReport();
-					    childForm.MdiParent = this;
-					    // The StartPosition property is essential
+                    if (found == false)
+                    {
+                        InvoicesReport childForm = new InvoicesReport();
+                        childForm.MdiParent = this;
+                        // The StartPosition property is essential
 
-					    // for the location property to work
+                        // for the location property to work
 
-					    childForm.StartPosition = FormStartPosition.CenterScreen;
-					    childForm.Location = new Point(0, 0);
-					    childForm.Show();
-				    }
-			    }
-		    }
-		    catch { }
-	    }
+                        childForm.StartPosition = FormStartPosition.CenterScreen;
+                        childForm.Location = new Point(0, 0);
+                        childForm.Show();
+                    }
+                }
+            }
+            catch { }
+        }
 
-	    
 
-	    private void smnuPurchaseOrder_Click(object sender, EventArgs e)
-	    {
-		    try
-		    {
-			    bool found = false;
 
-			    // get all of the MDI children in an array
+        private void smnuPurchaseOrder_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool found = false;
 
-			    Form[] charr = this.MdiChildren;
+                // get all of the MDI children in an array
 
-			    if (charr.Length == 0)      // no child form is opened
-			    {
-					AddEditPurchaseOrder childForm = new AddEditPurchaseOrder();
-				    childForm.MdiParent = this;
-				    // The StartPosition property is essential
+                Form[] charr = this.MdiChildren;
 
-				    // for the location property to work
+                if (charr.Length == 0)      // no child form is opened
+                {
+                    AddEditPurchaseOrder childForm = new AddEditPurchaseOrder();
+                    childForm.MdiParent = this;
+                    // The StartPosition property is essential
 
-				    childForm.StartPosition = FormStartPosition.CenterScreen;
-				    childForm.Location = new Point(0, 0);
-				    childForm.Show();
-			    }
-			    else      // child forms are opened
-			    {
+                    // for the location property to work
 
-				    foreach (Form chform in charr)
-				    {
-						if (chform.Name == "AddEditPurchaseOrder")
-						    // one instance of the form is already opened
-					    {
-						    chform.Activate();
-						    found = true;
-						    break;   // exit loop
+                    childForm.StartPosition = FormStartPosition.CenterScreen;
+                    childForm.Location = new Point(0, 0);
+                    childForm.Show();
+                }
+                else      // child forms are opened
+                {
 
-					    }
-					    else
-						    found = false;      // make sure flag is set to
+                    foreach (Form chform in charr)
+                    {
+                        if (chform.Name == "AddEditPurchaseOrder")
+                        // one instance of the form is already opened
+                        {
+                            chform.Activate();
+                            found = true;
+                            break;   // exit loop
 
-					    // false if the form is not found
+                        }
+                        else
+                            found = false;      // make sure flag is set to
 
-				    }
+                        // false if the form is not found
 
-				    if (found == false)
-				    {
-						AddEditPurchaseOrder childForm = new AddEditPurchaseOrder();
-					    childForm.MdiParent = this;
-					    // The StartPosition property is essential
+                    }
 
-					    // for the location property to work
+                    if (found == false)
+                    {
+                        AddEditPurchaseOrder childForm = new AddEditPurchaseOrder();
+                        childForm.MdiParent = this;
+                        // The StartPosition property is essential
 
-					    childForm.StartPosition = FormStartPosition.CenterScreen;
-					    childForm.Location = new Point(0, 0);
-					    childForm.Show();
-				    }
-			    }
-		    }
-		    catch { }
-	    }
+                        // for the location property to work
+
+                        childForm.StartPosition = FormStartPosition.CenterScreen;
+                        childForm.Location = new Point(0, 0);
+                        childForm.Show();
+                    }
+                }
+            }
+            catch { }
+        }
 
         //Tax Company Master
-		private void smnuTax_Click(object sender, EventArgs e)
+        private void smnuTax_Click(object sender, EventArgs e)
         {
-			try
-			{
-				bool found = false;
+            try
+            {
+                bool found = false;
 
-				// get all of the MDI children in an array
+                // get all of the MDI children in an array
 
-				Form[] charr = this.MdiChildren;
+                Form[] charr = this.MdiChildren;
 
-				if (charr.Length == 0)      // no child form is opened
-				{
-					AddTaxes childForm = new AddTaxes();
-					childForm.MdiParent = this;
-					// The StartPosition property is essential
+                if (charr.Length == 0)      // no child form is opened
+                {
+                    AddTaxes childForm = new AddTaxes();
+                    childForm.MdiParent = this;
+                    // The StartPosition property is essential
 
-					// for the location property to work
+                    // for the location property to work
 
-					childForm.StartPosition = FormStartPosition.CenterScreen;
-					childForm.Location = new Point(0, 0);
-					childForm.Show();
-				}
-				else      // child forms are opened
-				{
+                    childForm.StartPosition = FormStartPosition.CenterScreen;
+                    childForm.Location = new Point(0, 0);
+                    childForm.Show();
+                }
+                else      // child forms are opened
+                {
 
-					foreach (Form chform in charr)
-					{
-						if (chform.Name == "AddTaxes")
-						// one instance of the form is already opened
-						{
-							chform.Activate();
-							found = true;
-							break;   // exit loop
+                    foreach (Form chform in charr)
+                    {
+                        if (chform.Name == "AddTaxes")
+                        // one instance of the form is already opened
+                        {
+                            chform.Activate();
+                            found = true;
+                            break;   // exit loop
 
-						}
-						else
-							found = false;      // make sure flag is set to
+                        }
+                        else
+                            found = false;      // make sure flag is set to
 
-						// false if the form is not found
+                        // false if the form is not found
 
-					}
+                    }
 
-					if (found == false)
-					{
-						AddTaxes childForm = new AddTaxes();
-						childForm.MdiParent = this;
-						// The StartPosition property is essential
+                    if (found == false)
+                    {
+                        AddTaxes childForm = new AddTaxes();
+                        childForm.MdiParent = this;
+                        // The StartPosition property is essential
 
-						// for the location property to work
+                        // for the location property to work
 
-						childForm.StartPosition = FormStartPosition.CenterScreen;
-						childForm.Location = new Point(0, 0);
-						childForm.Show();
-					}
-				}
-			}
-			catch { }
+                        childForm.StartPosition = FormStartPosition.CenterScreen;
+                        childForm.Location = new Point(0, 0);
+                        childForm.Show();
+                    }
+                }
+            }
+            catch { }
         }
 
         //Help Menu
@@ -807,6 +807,188 @@ namespace ERPWinApp
             catch { }
         }
 
+        //
+        //Cheque Process
+        private void smnuBankDetails_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool found = false;
+
+                // get all of the MDI children in an array
+
+                Form[] charr = this.MdiChildren;
+
+                if (charr.Length == 0)      // no child form is opened
+                {
+                    frmFindBankDetails childForm = new frmFindBankDetails();
+                    childForm.MdiParent = this;
+                    // The StartPosition property is essential
+
+                    // for the location property to work
+
+                    childForm.StartPosition = FormStartPosition.CenterScreen;
+                    childForm.Location = new Point(0, 0);
+                    childForm.Show();
+                }
+                else      // child forms are opened
+                {
+
+                    foreach (Form chform in charr)
+                    {
+                        if (chform.Name == "frmFindBankDetails")
+                        // one instance of the form is already opened
+                        {
+                            chform.Activate();
+                            found = true;
+                            break;   // exit loop
+
+                        }
+                        else
+                            found = false;      // make sure flag is set to
+
+                        // false if the form is not found
+
+                    }
+
+                    if (found == false)
+                    {
+                        frmFindBankDetails childForm = new frmFindBankDetails();
+                        childForm.MdiParent = this;
+                        // The StartPosition property is essential
+
+                        // for the location property to work
+
+                        childForm.StartPosition = FormStartPosition.CenterScreen;
+                        childForm.Location = new Point(0, 0);
+                        childForm.Show();
+                    }
+                }
+            }
+            catch { }
+        }
+
+
+
+
+        private void smnuCreditDebit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool found = false;
+
+                // get all of the MDI children in an array
+
+                Form[] charr = this.MdiChildren;
+
+                if (charr.Length == 0)      // no child form is opened
+                {
+                    CreditDebitReport childForm = new CreditDebitReport();
+                    childForm.MdiParent = this;
+                    // The StartPosition property is essential
+
+                    // for the location property to work
+
+                    childForm.StartPosition = FormStartPosition.CenterScreen;
+                    childForm.Location = new Point(0, 0);
+                    childForm.Show();
+                }
+                else      // child forms are opened
+                {
+
+                    foreach (Form chform in charr)
+                    {
+                        if (chform.Name == "CreditDebitReport")
+                        // one instance of the form is already opened
+                        {
+                            chform.Activate();
+                            found = true;
+                            break;   // exit loop
+
+                        }
+                        else
+                            found = false;      // make sure flag is set to
+
+                        // false if the form is not found
+
+                    }
+
+                    if (found == false)
+                    {
+                        CreditDebitReport childForm = new CreditDebitReport();
+                        childForm.MdiParent = this;
+                        // The StartPosition property is essential
+
+                        // for the location property to work
+
+                        childForm.StartPosition = FormStartPosition.CenterScreen;
+                        childForm.Location = new Point(0, 0);
+                        childForm.Show();
+                    }
+                }
+            }
+            catch { }
+        }
+
+        //Cheque Process
+        private void smnuEntryCheque_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool found = false;
+
+                // get all of the MDI children in an array
+
+                Form[] charr = this.MdiChildren;
+
+                if (charr.Length == 0)      // no child form is opened
+                {
+                    ChequeProcessReport childForm = new ChequeProcessReport();
+                    childForm.MdiParent = this;
+                    // The StartPosition property is essential
+
+                    // for the location property to work
+
+                    childForm.StartPosition = FormStartPosition.CenterScreen;
+                    childForm.Location = new Point(0, 0);
+                    childForm.Show();
+                }
+                else      // child forms are opened
+                {
+
+                    foreach (Form chform in charr)
+                    {
+                        if (chform.Name == "ChequeProcessReport")
+                        // one instance of the form is already opened
+                        {
+                            chform.Activate();
+                            found = true;
+                            break;   // exit loop
+
+                        }
+                        else
+                            found = false;      // make sure flag is set to
+
+                        // false if the form is not found
+
+                    }
+
+                    if (found == false)
+                    {
+                        ChequeProcessReport childForm = new ChequeProcessReport();
+                        childForm.MdiParent = this;
+                        // The StartPosition property is essential
+
+                        // for the location property to work
+
+                        childForm.StartPosition = FormStartPosition.CenterScreen;
+                        childForm.Location = new Point(0, 0);
+                        childForm.Show();
+                    }
+                }
+            }
+            catch { }
+        }
 
         private void smnuManageSupplier_Click(object sender, EventArgs e)
         {
@@ -853,6 +1035,65 @@ namespace ERPWinApp
                     if (found == false)
                     {
                         SuppliersReport childForm = new SuppliersReport();
+                        childForm.MdiParent = this;
+                        // The StartPosition property is essential
+
+                        // for the location property to work
+
+                        childForm.StartPosition = FormStartPosition.CenterScreen;
+                        childForm.Location = new Point(0, 0);
+                        childForm.Show();
+                    }
+                }
+            }
+            catch { }
+        }
+
+        private void smnuManageEmployee_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool found = false;
+
+                // get all of the MDI children in an array
+
+                Form[] charr = this.MdiChildren;
+
+                if (charr.Length == 0)      // no child form is opened
+                {
+                    EmployeesReport childForm = new EmployeesReport();
+                    childForm.MdiParent = this;
+                    // The StartPosition property is essential
+
+                    // for the location property to work
+
+                    childForm.StartPosition = FormStartPosition.CenterScreen;
+                    childForm.Location = new Point(0, 0);
+                    childForm.Show();
+                }
+                else      // child forms are opened
+                {
+
+                    foreach (Form chform in charr)
+                    {
+                        if (chform.Name == "EmployeesReport")
+                        // one instance of the form is already opened
+                        {
+                            chform.Activate();
+                            found = true;
+                            break;   // exit loop
+
+                        }
+                        else
+                            found = false;      // make sure flag is set to
+
+                        // false if the form is not found
+
+                    }
+
+                    if (found == false)
+                    {
+                        EmployeesReport childForm = new EmployeesReport();
                         childForm.MdiParent = this;
                         // The StartPosition property is essential
 
@@ -1108,119 +1349,119 @@ namespace ERPWinApp
         {
             try
             {
-				Company companyService = new Company();
-	            Company activeCompany = (from company in companyService.GetAllCompanyList()
-			            .Where(v => v.Status == true)
-		            select company).SingleOrDefault();
+                Company companyService = new Company();
+                Company activeCompany = (from company in companyService.GetAllCompanyList()
+                        .Where(v => v.Status == true)
+                                         select company).SingleOrDefault();
 
-	            if (activeCompany.CompanyId != 0 || activeCompany.CompanyId != -1)
-	            {
-		            bool found = false;
+                if (activeCompany.CompanyId != 0 || activeCompany.CompanyId != -1)
+                {
+                    bool found = false;
 
-		            // get all of the MDI children in an array
+                    // get all of the MDI children in an array
 
-		            Form[] charr = this.MdiChildren;
+                    Form[] charr = this.MdiChildren;
 
-		            if (charr.Length == 0) // no child form is opened
-		            {
-			            EditCompanyDetails childForm = new EditCompanyDetails();
-			            childForm.MdiParent = this;
-			            // The StartPosition property is essential
+                    if (charr.Length == 0) // no child form is opened
+                    {
+                        EditCompanyDetails childForm = new EditCompanyDetails();
+                        childForm.MdiParent = this;
+                        // The StartPosition property is essential
 
-			            // for the location property to work
+                        // for the location property to work
 
-			            childForm.StartPosition = FormStartPosition.CenterScreen;
-			            childForm.Location = new Point(0, 0);
-			            childForm.Show();
-		            }
-		            else // child forms are opened
-		            {
+                        childForm.StartPosition = FormStartPosition.CenterScreen;
+                        childForm.Location = new Point(0, 0);
+                        childForm.Show();
+                    }
+                    else // child forms are opened
+                    {
 
-			            foreach (Form chform in charr)
-			            {
-				            if (chform.Name == "EditCompanyDetails")
-					            // one instance of the form is already opened
-				            {
-					            chform.Activate();
-					            found = true;
-					            break; // exit loop
+                        foreach (Form chform in charr)
+                        {
+                            if (chform.Name == "EditCompanyDetails")
+                            // one instance of the form is already opened
+                            {
+                                chform.Activate();
+                                found = true;
+                                break; // exit loop
 
-				            }
-				            else
-					            found = false; // make sure flag is set to
+                            }
+                            else
+                                found = false; // make sure flag is set to
 
-				            // false if the form is not found
+                            // false if the form is not found
 
-			            }
+                        }
 
-			            if (found == false)
-			            {
-				            EditCompanyDetails childForm = new EditCompanyDetails();
-				            childForm.MdiParent = this;
-				            // The StartPosition property is essential
+                        if (found == false)
+                        {
+                            EditCompanyDetails childForm = new EditCompanyDetails();
+                            childForm.MdiParent = this;
+                            // The StartPosition property is essential
 
-				            // for the location property to work
+                            // for the location property to work
 
-				            childForm.StartPosition = FormStartPosition.CenterScreen;
-				            childForm.Location = new Point(0, 0);
-				            childForm.Show();
-			            }
-		            }
-	            }
-	            else
-	            {
-		            bool found = false;
+                            childForm.StartPosition = FormStartPosition.CenterScreen;
+                            childForm.Location = new Point(0, 0);
+                            childForm.Show();
+                        }
+                    }
+                }
+                else
+                {
+                    bool found = false;
 
-		            // get all of the MDI children in an array
+                    // get all of the MDI children in an array
 
-		            Form[] charr = this.MdiChildren;
+                    Form[] charr = this.MdiChildren;
 
-		            if (charr.Length == 0) // no child form is opened
-		            {
-			            AddCompanyDetails childForm = new AddCompanyDetails();
-			            childForm.MdiParent = this;
-			            // The StartPosition property is essential
+                    if (charr.Length == 0) // no child form is opened
+                    {
+                        AddCompanyDetails childForm = new AddCompanyDetails();
+                        childForm.MdiParent = this;
+                        // The StartPosition property is essential
 
-			            // for the location property to work
+                        // for the location property to work
 
-			            childForm.StartPosition = FormStartPosition.CenterScreen;
-			            childForm.Location = new Point(0, 0);
-			            childForm.Show();
-		            }
-		            else // child forms are opened
-		            {
+                        childForm.StartPosition = FormStartPosition.CenterScreen;
+                        childForm.Location = new Point(0, 0);
+                        childForm.Show();
+                    }
+                    else // child forms are opened
+                    {
 
-			            foreach (Form chform in charr)
-			            {
-				            if (chform.Name == "AddCompanyDetails")
-					            // one instance of the form is already opened
-				            {
-					            chform.Activate();
-					            found = true;
-					            break; // exit loop
+                        foreach (Form chform in charr)
+                        {
+                            if (chform.Name == "AddCompanyDetails")
+                            // one instance of the form is already opened
+                            {
+                                chform.Activate();
+                                found = true;
+                                break; // exit loop
 
-				            }
-				            else
-					            found = false; // make sure flag is set to
+                            }
+                            else
+                                found = false; // make sure flag is set to
 
-				            // false if the form is not found
+                            // false if the form is not found
 
-			            }
+                        }
 
-			            if (found == false)
-			            {
-				            AddCompanyDetails childForm = new AddCompanyDetails();
-				            childForm.MdiParent = this;
-				            // The StartPosition property is essential
+                        if (found == false)
+                        {
+                            AddCompanyDetails childForm = new AddCompanyDetails();
+                            childForm.MdiParent = this;
+                            // The StartPosition property is essential
 
-				            // for the location property to work
+                            // for the location property to work
 
-				            childForm.StartPosition = FormStartPosition.CenterScreen;
-				            childForm.Location = new Point(0, 0);
-				            childForm.Show();
-			            }
-		            }
-	            }
+                            childForm.StartPosition = FormStartPosition.CenterScreen;
+                            childForm.Location = new Point(0, 0);
+                            childForm.Show();
+                        }
+                    }
+                }
             }
             catch { }
         }
@@ -1462,7 +1703,7 @@ namespace ERPWinApp
             }
             catch { }
         }
-        
+
         //Form Theme Settings
         private void smnuThemeSettings_Click(object sender, EventArgs e)
         {
@@ -1599,8 +1840,8 @@ namespace ERPWinApp
 
         private void GetCurrentServerDateTime()
         {
-           _serverDateTime = Utility.GetServerDate(_ApplicationConnection);
-         }
+            _serverDateTime = Utility.GetServerDate(_ApplicationConnection);
+        }
 
         private void SetMenuForUser()
         {
@@ -1654,7 +1895,7 @@ namespace ERPWinApp
                             tstripMenuIcons.Items.Add(tstripInvoiceBlank2);
                             tstripSeparator1.Width = tstripSeparator1.Width - 100;
                             break;
-                        
+
                         case "Reports":
                             tstripSeparator1.Width = tstripSeparator1.Width - 100;
                             break;
@@ -1702,16 +1943,36 @@ namespace ERPWinApp
                             toolStripLabel3.Width = toolStripLabel3.Width - _imgWidth;
                             toolStripLabel3.Enabled = true;
                             break;
-                            
+
+                        case "smnuManageEmployee":
+                            tempItem.Click += new EventHandler(smnuManageEmployee_Click);
+                            toolStripLabel4.Click += new EventHandler(smnuManageEmployee_Click);
+                            toolStripLabel4.ImageScaling = ToolStripItemImageScaling.None;
+
+                            toolStripLabel4.Visible = true;
+                            toolStripLabel4.Width = toolStripLabel4.Width - _imgWidth;
+                            toolStripLabel4.Enabled = true;
+                            break;
+
+                        case "smnuEntryCheque":
+                            tempItem.Click += new EventHandler(smnuEntryCheque_Click);
+                            toolStripLabel5.Click += new EventHandler(smnuEntryCheque_Click);
+                            toolStripLabel5.ImageScaling = ToolStripItemImageScaling.None;
+
+                            toolStripLabel5.Visible = true;
+                            toolStripLabel5.Width = toolStripLabel4.Width - _imgWidth;
+                            toolStripLabel5.Enabled = true;
+                            break;
+
                         case "smnuInvoice":
                             tempItem.Click += new EventHandler(smnuInvoice_Click);
                             tstripInvoice.Click += new EventHandler(smnuInvoice_Click);
                             tstripInvoice.ImageScaling = ToolStripItemImageScaling.None;
                             tstripInvoice.Enabled = true;
                             break;
-						case "smnuInvoicesReport":
-							tempItem.Click += new EventHandler(smnuInvoicesReport_Click);
-		                    break;
+                        case "smnuInvoicesReport":
+                            tempItem.Click += new EventHandler(smnuInvoicesReport_Click);
+                            break;
                         case "smnuStock":
                             tempItem.Click += new EventHandler(smnuStock_Click);
                             break;
@@ -1719,21 +1980,21 @@ namespace ERPWinApp
                             tempItem.Click += new EventHandler(smnuEstimate_Click);
                             break;
 
-						case "smnuPurchaseOrder":
-							tempItem.Click += new EventHandler(smnuPurchaseOrder_Click);
-							tstripInvoice.Click += new EventHandler(smnuPurchaseOrder_Click);
-		                    tstripInvoice.ImageScaling = ToolStripItemImageScaling.None;
-		                    tstripInvoice.Enabled = true;
-		                    break;
-	                        
-						case "smnuTax":
-							tempItem.Click += new EventHandler(smnuTax_Click);
+                        case "smnuPurchaseOrder":
+                            tempItem.Click += new EventHandler(smnuPurchaseOrder_Click);
+                            tstripInvoice.Click += new EventHandler(smnuPurchaseOrder_Click);
+                            tstripInvoice.ImageScaling = ToolStripItemImageScaling.None;
+                            tstripInvoice.Enabled = true;
                             break;
-                       
+
+                        case "smnuTax":
+                            tempItem.Click += new EventHandler(smnuTax_Click);
+                            break;
+
                         case "smnuRegistrationReport":
                             //tempItem.Click += new EventHandler(smnuRegistrationReport_Click);
                             break;
-                       
+
                         case "smnuHelpContents":
                             tempItem.Click += new EventHandler(smnuHelpContents_Click);
                             tstripHelp.Click += new EventHandler(smnuHelpContents_Click);
@@ -1747,7 +2008,7 @@ namespace ERPWinApp
                             tempItem.Click += new EventHandler(smnuHelpAbout_Click);
                             break;
 
-                        
+
                         case "smnuBillDescriptions":
                             tempItem.Click += new EventHandler(smnuBillDescriptions_Click);
                             break;
@@ -1767,7 +2028,7 @@ namespace ERPWinApp
                             break;
                         case "smnuCompanyInformation":
                             tempItem.Click += new EventHandler(smnuCompanyInformation_Click);
-                            break;                        
+                            break;
                         case "smnuResetPassword":
                             tempItem.Click += new EventHandler(smnuResetPassword_Click);
                             break;
@@ -1779,19 +2040,25 @@ namespace ERPWinApp
                             break;
                         case "smnuUserRights":
                             tempItem.Click += new EventHandler(smnuUserRights_Click);
-                            break;                        
+                            break;
                         case "smnuThemeSettings":
                             tempItem.Click += new EventHandler(smnuThemeSettings_Click);
                             break;
-                            case "smnuProduct":
+                        case "smnuProduct":
                             tempItem.Click += new EventHandler(smnuProduct_Click);
                             break;
-                            case "smnuProductMaterial":
+                        case "smnuProductMaterial":
                             tempItem.Click += new EventHandler(smnuProductMaterial_Click);
                             break;
-                            
+                        case "smnuBankDetails":
+                            tempItem.Click += new EventHandler(smnuBankDetails_Click);
+                            break;
+                        case "smnuCreditDebit":
+                            tempItem.Click += new EventHandler(smnuCreditDebit_Click);
+                            break;
 
-                                
+
+
                     }
                     menuSubItemPCS[Convert.ToInt32(dRow["MenuID"])] = tempItem;
                     if (menuItemPCS[Convert.ToInt32(dRow["ParentMenuID"])] == null)

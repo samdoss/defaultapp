@@ -136,7 +136,7 @@ namespace ERPWinApp
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            DataGridViewRow row = dgvSupplierResult.Rows[rowIndex];
+            DataGridViewRow row = dgvSupplierResult.SelectedRows[rowIndex];
             int SupplierId = Convert.ToInt32(row.Cells["SupplierId"].Value);
             AddNewSupplier addNewSupplier = new AddNewSupplier();
             addNewSupplier.SupplierID = SupplierId;
@@ -152,7 +152,7 @@ namespace ERPWinApp
 
         private void btnView_Click(object sender, EventArgs e)
         {
-            DataGridViewRow row = dgvSupplierResult.Rows[rowIndex];
+            DataGridViewRow row = dgvSupplierResult.SelectedRows[rowIndex];
             int SupplierId = Convert.ToInt32(row.Cells["SupplierId"].Value);
             AddNewSupplier addNewSupplier = new AddNewSupplier();
             addNewSupplier.SupplierID = SupplierId;
@@ -162,7 +162,7 @@ namespace ERPWinApp
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DataGridViewRow row = dgvSupplierResult.Rows[rowIndex];
+            DataGridViewRow row = dgvSupplierResult.SelectedRows[rowIndex];
             int SupplierId = Convert.ToInt32(row.Cells["SupplierId"].Value);
             DialogResult dialogRes = CustomMessageBox.Show(Constants.DELETE_WARNING,
                                   Constants.CONSTANT_INFORMATION,

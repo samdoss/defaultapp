@@ -169,6 +169,7 @@
             this.btnSearch.TabIndex = 202;
             this.btnSearch.Text = "Searc&h";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Visible = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnClear

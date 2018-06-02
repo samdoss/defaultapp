@@ -61,8 +61,9 @@ namespace ERPWinApp
             this.toolStripLogout = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tstripSeparator1 = new System.Windows.Forms.ToolStripLabel();
-            this.tstripExit = new System.Windows.Forms.ToolStripButton();
             this.ApplicationHelp = new System.Windows.Forms.HelpProvider();
+            this.tstripExit = new System.Windows.Forms.ToolStripButton();
+            this.crToolStripTextBox1 = new CrystalDecisions.Windows.Forms.CRToolStripTextBox();
             this.statusStrip.SuspendLayout();
             this.tstripMenuIcons.SuspendLayout();
             this.SuspendLayout();
@@ -158,7 +159,8 @@ namespace ERPWinApp
             this.toolStripLogout,
             this.toolStripSeparator1,
             this.tstripSeparator1,
-            this.tstripExit});
+            this.tstripExit,
+            this.crToolStripTextBox1});
             this.tstripMenuIcons.Location = new System.Drawing.Point(0, 0);
             this.tstripMenuIcons.Name = "tstripMenuIcons";
             this.tstripMenuIcons.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -318,6 +320,10 @@ namespace ERPWinApp
             this.tstripSeparator1.Name = "tstripSeparator1";
             this.tstripSeparator1.Size = new System.Drawing.Size(5, 34);
             // 
+            // ApplicationHelp
+            // 
+            this.ApplicationHelp.HelpNamespace = "\\Help\\HelpFile.chm";
+            // 
             // tstripExit
             // 
             this.tstripExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -329,9 +335,10 @@ namespace ERPWinApp
             this.tstripExit.Text = "Exit";
             this.tstripExit.Click += new System.EventHandler(this.tstripExit_Click);
             // 
-            // ApplicationHelp
+            // crToolStripTextBox1
             // 
-            this.ApplicationHelp.HelpNamespace = "\\Help\\HelpFile.chm";
+            this.crToolStripTextBox1.Name = "crToolStripTextBox1";
+            this.crToolStripTextBox1.Size = new System.Drawing.Size(100, 23);
             // 
             // MDIForm
             // 
@@ -374,7 +381,6 @@ namespace ERPWinApp
         private System.Windows.Forms.ToolStripButton tstripCustomers;
         private System.Windows.Forms.ToolStripButton tstripInvoice;
         private System.Windows.Forms.ToolStripButton tstripHelp;
-        private System.Windows.Forms.ToolStripButton tstripExit;
         private System.Windows.Forms.ToolStripLabel tstripInvoiceBlank2;
         private System.Windows.Forms.ToolStripLabel tstripSeparator1;
         private System.Windows.Forms.ToolStripLabel tstripHelpBlank1;
@@ -395,6 +401,8 @@ namespace ERPWinApp
         private System.Windows.Forms.ToolStripLabel toolStripLabel9;
         private System.Windows.Forms.ToolStripLabel toolStripLabel10;
         private System.Windows.Forms.ToolStripLabel toolStripLabel11;
+        private System.Windows.Forms.ToolStripButton tstripExit;
+        private CrystalDecisions.Windows.Forms.CRToolStripTextBox crToolStripTextBox1;
     }
 }
 

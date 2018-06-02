@@ -34,18 +34,18 @@
             this.lblEmployeeName = new System.Windows.Forms.Label();
             this.txtEmployeeName = new System.Windows.Forms.TextBox();
             this.lblTIN = new System.Windows.Forms.Label();
-            this.txtTIN = new System.Windows.Forms.TextBox();
+            this.txtMotherName = new System.Windows.Forms.TextBox();
             this.lblBankRegion = new System.Windows.Forms.Label();
             this.txtBankRegion = new System.Windows.Forms.TextBox();
             this.lblSalesPersonName = new System.Windows.Forms.Label();
-            this.txtSalesPersonName = new System.Windows.Forms.TextBox();
+            this.txtDateOfBirth = new System.Windows.Forms.TextBox();
             this.lblState = new System.Windows.Forms.Label();
             this.ddlState = new System.Windows.Forms.ComboBox();
             this.lblCity = new System.Windows.Forms.Label();
             this.ddlCity = new System.Windows.Forms.ComboBox();
             this.lblCountry = new System.Windows.Forms.Label();
             this.ddlCountry = new System.Windows.Forms.ComboBox();
-            this.txtEmployeeCompanyName = new System.Windows.Forms.TextBox();
+            this.txtFatherName = new System.Windows.Forms.TextBox();
             this.lblEmployeeCompanyName = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.txtHomePhone = new System.Windows.Forms.TextBox();
@@ -55,10 +55,6 @@
             this.pnlAddEmployee = new System.Windows.Forms.Panel();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.lblEmailID1 = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.txtEmail1 = new System.Windows.Forms.TextBox();
-            this.txtEmail2 = new System.Windows.Forms.TextBox();
             this.lblShippingCountry = new System.Windows.Forms.Label();
             this.ddlBankName = new System.Windows.Forms.ComboBox();
             this.lblBankAccountNo = new System.Windows.Forms.Label();
@@ -76,13 +72,17 @@
             this.txtComments = new System.Windows.Forms.TextBox();
             this.lblShippingAddress = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtGSTNumber = new System.Windows.Forms.TextBox();
-            this.txtTinNumber = new System.Windows.Forms.TextBox();
+            this.txtPFNumber = new System.Windows.Forms.TextBox();
+            this.lblEmployeeCode = new System.Windows.Forms.Label();
+            this.txtEmail2 = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.lblTinNumber = new System.Windows.Forms.Label();
+            this.txtAadharPanNumber = new System.Windows.Forms.TextBox();
+            this.lblEmailID1 = new System.Windows.Forms.Label();
+            this.txtEmail1 = new System.Windows.Forms.TextBox();
             this.lblUserMsg = new System.Windows.Forms.Label();
             this.lblCaption = new System.Windows.Forms.Label();
             this.lblMsgColor = new System.Windows.Forms.Label();
-            this.lblEmployeeCode = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnlAddEmployee.SuspendLayout();
             this.SuspendLayout();
@@ -99,18 +99,18 @@
             this.tableLayoutPanel1.Controls.Add(this.lblEmployeeName, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtEmployeeName, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblTIN, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txtTIN, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txtMotherName, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblBankRegion, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.txtBankRegion, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblSalesPersonName, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.txtSalesPersonName, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.txtDateOfBirth, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.lblState, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.ddlState, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.lblCity, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.ddlCity, 1, 8);
             this.tableLayoutPanel1.Controls.Add(this.lblCountry, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.ddlCountry, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.txtEmployeeCompanyName, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtFatherName, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblEmployeeCompanyName, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblPhone, 0, 10);
             this.tableLayoutPanel1.Controls.Add(this.txtHomePhone, 1, 10);
@@ -118,10 +118,6 @@
             this.tableLayoutPanel1.Controls.Add(this.txtWorkPhone, 1, 11);
             this.tableLayoutPanel1.Controls.Add(this.txtMobilePhone, 1, 12);
             this.tableLayoutPanel1.Controls.Add(this.pnlAddEmployee, 3, 12);
-            this.tableLayoutPanel1.Controls.Add(this.lblEmailID1, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblEmail, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtEmail1, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtEmail2, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblShippingCountry, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.ddlBankName, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblBankAccountNo, 2, 4);
@@ -139,10 +135,14 @@
             this.tableLayoutPanel1.Controls.Add(this.txtComments, 3, 9);
             this.tableLayoutPanel1.Controls.Add(this.lblShippingAddress, 2, 9);
             this.tableLayoutPanel1.Controls.Add(this.label4, 2, 8);
-            this.tableLayoutPanel1.Controls.Add(this.txtGSTNumber, 3, 8);
-            this.tableLayoutPanel1.Controls.Add(this.txtTinNumber, 3, 10);
-            this.tableLayoutPanel1.Controls.Add(this.lblTinNumber, 2, 10);
+            this.tableLayoutPanel1.Controls.Add(this.txtPFNumber, 3, 8);
             this.tableLayoutPanel1.Controls.Add(this.lblEmployeeCode, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtEmail2, 3, 11);
+            this.tableLayoutPanel1.Controls.Add(this.lblEmail, 2, 11);
+            this.tableLayoutPanel1.Controls.Add(this.lblTinNumber, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtAadharPanNumber, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblEmailID1, 2, 10);
+            this.tableLayoutPanel1.Controls.Add(this.txtEmail1, 3, 10);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(14, 85);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 13;
@@ -206,7 +206,7 @@
             this.txtEmployeeName.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.txtEmployeeName.Name = "txtEmployeeName";
             this.txtEmployeeName.Size = new System.Drawing.Size(249, 23);
-            this.txtEmployeeName.TabIndex = 1;
+            this.txtEmployeeName.TabIndex = 2;
             // 
             // lblTIN
             // 
@@ -219,14 +219,14 @@
             this.lblTIN.TabIndex = 5;
             this.lblTIN.Text = "Employee Mother Name";
             // 
-            // txtTIN
+            // txtMotherName
             // 
-            this.txtTIN.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtTIN.Location = new System.Drawing.Point(180, 106);
-            this.txtTIN.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.txtTIN.Name = "txtTIN";
-            this.txtTIN.Size = new System.Drawing.Size(249, 23);
-            this.txtTIN.TabIndex = 3;
+            this.txtMotherName.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtMotherName.Location = new System.Drawing.Point(180, 106);
+            this.txtMotherName.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.txtMotherName.Name = "txtMotherName";
+            this.txtMotherName.Size = new System.Drawing.Size(249, 23);
+            this.txtMotherName.TabIndex = 4;
             // 
             // lblBankRegion
             // 
@@ -259,14 +259,14 @@
             this.lblSalesPersonName.TabIndex = 7;
             this.lblSalesPersonName.Text = "Employee Date Of Birth";
             // 
-            // txtSalesPersonName
+            // txtDateOfBirth
             // 
-            this.txtSalesPersonName.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtSalesPersonName.Location = new System.Drawing.Point(180, 138);
-            this.txtSalesPersonName.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.txtSalesPersonName.Name = "txtSalesPersonName";
-            this.txtSalesPersonName.Size = new System.Drawing.Size(154, 23);
-            this.txtSalesPersonName.TabIndex = 4;
+            this.txtDateOfBirth.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtDateOfBirth.Location = new System.Drawing.Point(180, 138);
+            this.txtDateOfBirth.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.txtDateOfBirth.Name = "txtDateOfBirth";
+            this.txtDateOfBirth.Size = new System.Drawing.Size(154, 23);
+            this.txtDateOfBirth.TabIndex = 5;
             // 
             // lblState
             // 
@@ -288,7 +288,7 @@
             this.ddlState.MaxLength = 150;
             this.ddlState.Name = "ddlState";
             this.ddlState.Size = new System.Drawing.Size(242, 23);
-            this.ddlState.TabIndex = 7;
+            this.ddlState.TabIndex = 8;
             this.ddlState.Validated += new System.EventHandler(this.ddlState_Validated);
             // 
             // lblCity
@@ -308,11 +308,11 @@
             this.ddlCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ddlCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlCity.FormattingEnabled = true;
-            this.ddlCity.Location = new System.Drawing.Point(177, 298);
+            this.ddlCity.Location = new System.Drawing.Point(177, 299);
             this.ddlCity.MaxLength = 150;
             this.ddlCity.Name = "ddlCity";
             this.ddlCity.Size = new System.Drawing.Size(242, 23);
-            this.ddlCity.TabIndex = 8;
+            this.ddlCity.TabIndex = 9;
             // 
             // lblCountry
             // 
@@ -334,17 +334,17 @@
             this.ddlCountry.MaxLength = 150;
             this.ddlCountry.Name = "ddlCountry";
             this.ddlCountry.Size = new System.Drawing.Size(242, 23);
-            this.ddlCountry.TabIndex = 6;
+            this.ddlCountry.TabIndex = 7;
             this.ddlCountry.Validated += new System.EventHandler(this.ddlCountry_Validated);
             // 
-            // txtEmployeeCompanyName
+            // txtFatherName
             // 
-            this.txtEmployeeCompanyName.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtEmployeeCompanyName.Location = new System.Drawing.Point(180, 73);
-            this.txtEmployeeCompanyName.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.txtEmployeeCompanyName.Name = "txtEmployeeCompanyName";
-            this.txtEmployeeCompanyName.Size = new System.Drawing.Size(249, 23);
-            this.txtEmployeeCompanyName.TabIndex = 2;
+            this.txtFatherName.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtFatherName.Location = new System.Drawing.Point(180, 73);
+            this.txtFatherName.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.txtFatherName.Name = "txtFatherName";
+            this.txtFatherName.Size = new System.Drawing.Size(249, 23);
+            this.txtFatherName.TabIndex = 3;
             // 
             // lblEmployeeCompanyName
             // 
@@ -375,7 +375,7 @@
             this.txtHomePhone.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.txtHomePhone.Name = "txtHomePhone";
             this.txtHomePhone.Size = new System.Drawing.Size(249, 23);
-            this.txtHomePhone.TabIndex = 10;
+            this.txtHomePhone.TabIndex = 11;
             // 
             // label1
             // 
@@ -395,7 +395,7 @@
             this.txtWorkPhone.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.txtWorkPhone.Name = "txtWorkPhone";
             this.txtWorkPhone.Size = new System.Drawing.Size(249, 23);
-            this.txtWorkPhone.TabIndex = 11;
+            this.txtWorkPhone.TabIndex = 12;
             // 
             // txtMobilePhone
             // 
@@ -404,7 +404,7 @@
             this.txtMobilePhone.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.txtMobilePhone.Name = "txtMobilePhone";
             this.txtMobilePhone.Size = new System.Drawing.Size(249, 23);
-            this.txtMobilePhone.TabIndex = 12;
+            this.txtMobilePhone.TabIndex = 13;
             // 
             // pnlAddEmployee
             // 
@@ -421,7 +421,7 @@
             this.btnReset.Margin = new System.Windows.Forms.Padding(5);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(75, 23);
-            this.btnReset.TabIndex = 25;
+            this.btnReset.TabIndex = 1;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -432,50 +432,10 @@
             this.btnSave.Margin = new System.Windows.Forms.Padding(5);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 24;
+            this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // lblEmailID1
-            // 
-            this.lblEmailID1.AutoSize = true;
-            this.lblEmailID1.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblEmailID1.Location = new System.Drawing.Point(481, 12);
-            this.lblEmailID1.Margin = new System.Windows.Forms.Padding(6, 12, 6, 6);
-            this.lblEmailID1.Name = "lblEmailID1";
-            this.lblEmailID1.Size = new System.Drawing.Size(48, 15);
-            this.lblEmailID1.TabIndex = 43;
-            this.lblEmailID1.Text = "Email 1";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblEmail.Location = new System.Drawing.Point(481, 47);
-            this.lblEmail.Margin = new System.Windows.Forms.Padding(6, 12, 6, 6);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(48, 15);
-            this.lblEmail.TabIndex = 4;
-            this.lblEmail.Text = "Email 2";
-            // 
-            // txtEmail1
-            // 
-            this.txtEmail1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtEmail1.Location = new System.Drawing.Point(647, 5);
-            this.txtEmail1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.txtEmail1.Name = "txtEmail1";
-            this.txtEmail1.Size = new System.Drawing.Size(249, 23);
-            this.txtEmail1.TabIndex = 13;
-            // 
-            // txtEmail2
-            // 
-            this.txtEmail2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtEmail2.Location = new System.Drawing.Point(647, 40);
-            this.txtEmail2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.txtEmail2.Name = "txtEmail2";
-            this.txtEmail2.Size = new System.Drawing.Size(249, 23);
-            this.txtEmail2.TabIndex = 14;
             // 
             // lblShippingCountry
             // 
@@ -599,7 +559,7 @@
             this.txtBillingAddress.Name = "txtBillingAddress";
             this.txtBillingAddress.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtBillingAddress.Size = new System.Drawing.Size(249, 79);
-            this.txtBillingAddress.TabIndex = 9;
+            this.txtBillingAddress.TabIndex = 10;
             // 
             // lblZip
             // 
@@ -619,7 +579,7 @@
             this.txtZip.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.txtZip.Name = "txtZip";
             this.txtZip.Size = new System.Drawing.Size(249, 23);
-            this.txtZip.TabIndex = 5;
+            this.txtZip.TabIndex = 6;
             // 
             // txtComments
             // 
@@ -654,38 +614,89 @@
             this.label4.TabIndex = 54;
             this.label4.Text = "PF Number";
             // 
-            // txtGSTNumber
+            // txtPFNumber
             // 
-            this.txtGSTNumber.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtGSTNumber.Location = new System.Drawing.Point(647, 294);
-            this.txtGSTNumber.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.txtGSTNumber.MaxLength = 30;
-            this.txtGSTNumber.Name = "txtGSTNumber";
-            this.txtGSTNumber.Size = new System.Drawing.Size(249, 23);
-            this.txtGSTNumber.TabIndex = 21;
+            this.txtPFNumber.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtPFNumber.Location = new System.Drawing.Point(647, 294);
+            this.txtPFNumber.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.txtPFNumber.MaxLength = 30;
+            this.txtPFNumber.Name = "txtPFNumber";
+            this.txtPFNumber.Size = new System.Drawing.Size(249, 23);
+            this.txtPFNumber.TabIndex = 21;
             // 
-            // txtTinNumber
+            // lblEmployeeCode
             // 
-            this.txtTinNumber.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtTinNumber.Location = new System.Drawing.Point(647, 431);
-            this.txtTinNumber.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.txtTinNumber.MaxLength = 30;
-            this.txtTinNumber.Name = "txtTinNumber";
-            this.txtTinNumber.Size = new System.Drawing.Size(249, 23);
-            this.txtTinNumber.TabIndex = 23;
-            this.txtTinNumber.Visible = false;
+            this.lblEmployeeCode.AutoSize = true;
+            this.lblEmployeeCode.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeeCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lblEmployeeCode.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblEmployeeCode.Location = new System.Drawing.Point(180, 12);
+            this.lblEmployeeCode.Margin = new System.Windows.Forms.Padding(6, 12, 6, 6);
+            this.lblEmployeeCode.Name = "lblEmployeeCode";
+            this.lblEmployeeCode.Size = new System.Drawing.Size(51, 17);
+            this.lblEmployeeCode.TabIndex = 25;
+            this.lblEmployeeCode.Text = "JSKS";
+            // 
+            // txtEmail2
+            // 
+            this.txtEmail2.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtEmail2.Location = new System.Drawing.Point(647, 465);
+            this.txtEmail2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.txtEmail2.Name = "txtEmail2";
+            this.txtEmail2.Size = new System.Drawing.Size(249, 23);
+            this.txtEmail2.TabIndex = 24;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lblEmail.Location = new System.Drawing.Point(481, 472);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(6, 12, 6, 6);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(48, 15);
+            this.lblEmail.TabIndex = 4;
+            this.lblEmail.Text = "Email 2";
             // 
             // lblTinNumber
             // 
             this.lblTinNumber.AutoSize = true;
             this.lblTinNumber.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblTinNumber.Location = new System.Drawing.Point(481, 438);
+            this.lblTinNumber.Location = new System.Drawing.Point(481, 47);
             this.lblTinNumber.Margin = new System.Windows.Forms.Padding(6, 12, 6, 6);
             this.lblTinNumber.Name = "lblTinNumber";
             this.lblTinNumber.Size = new System.Drawing.Size(125, 15);
             this.lblTinNumber.TabIndex = 52;
             this.lblTinNumber.Text = "Aadhar / Pan Number";
-            this.lblTinNumber.Visible = false;
+            // 
+            // txtAadharPanNumber
+            // 
+            this.txtAadharPanNumber.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtAadharPanNumber.Location = new System.Drawing.Point(647, 40);
+            this.txtAadharPanNumber.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.txtAadharPanNumber.MaxLength = 30;
+            this.txtAadharPanNumber.Name = "txtAadharPanNumber";
+            this.txtAadharPanNumber.Size = new System.Drawing.Size(249, 23);
+            this.txtAadharPanNumber.TabIndex = 14;
+            // 
+            // lblEmailID1
+            // 
+            this.lblEmailID1.AutoSize = true;
+            this.lblEmailID1.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lblEmailID1.Location = new System.Drawing.Point(481, 438);
+            this.lblEmailID1.Margin = new System.Windows.Forms.Padding(6, 12, 6, 6);
+            this.lblEmailID1.Name = "lblEmailID1";
+            this.lblEmailID1.Size = new System.Drawing.Size(48, 15);
+            this.lblEmailID1.TabIndex = 43;
+            this.lblEmailID1.Text = "Email 1";
+            // 
+            // txtEmail1
+            // 
+            this.txtEmail1.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtEmail1.Location = new System.Drawing.Point(647, 431);
+            this.txtEmail1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.txtEmail1.Name = "txtEmail1";
+            this.txtEmail1.Size = new System.Drawing.Size(249, 23);
+            this.txtEmail1.TabIndex = 23;
             // 
             // lblUserMsg
             // 
@@ -707,7 +718,7 @@
             this.lblCaption.Location = new System.Drawing.Point(-3, -1);
             this.lblCaption.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCaption.Name = "lblCaption";
-            this.lblCaption.Size = new System.Drawing.Size(981, 59);
+            this.lblCaption.Size = new System.Drawing.Size(981, 58);
             this.lblCaption.TabIndex = 257;
             this.lblCaption.Text = "Employee";
             this.lblCaption.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -723,17 +734,6 @@
             this.lblMsgColor.TabIndex = 259;
             this.lblMsgColor.Text = "Yellow";
             this.lblMsgColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblEmployeeCode
-            // 
-            this.lblEmployeeCode.AutoSize = true;
-            this.lblEmployeeCode.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblEmployeeCode.Location = new System.Drawing.Point(180, 12);
-            this.lblEmployeeCode.Margin = new System.Windows.Forms.Padding(6, 12, 6, 6);
-            this.lblEmployeeCode.Name = "lblEmployeeCode";
-            this.lblEmployeeCode.Size = new System.Drawing.Size(86, 15);
-            this.lblEmployeeCode.TabIndex = 55;
-            this.lblEmployeeCode.Text = "EmployeeCode";
             // 
             // AddNewEmployee
             // 
@@ -751,8 +751,9 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddNewEmployee";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add New Employee";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AddNewEmployee_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -779,13 +780,13 @@
         private System.Windows.Forms.Label lblBankRegion;
         private System.Windows.Forms.Label lblSalesPersonName;
         private System.Windows.Forms.TextBox txtEmployeeName;
-        private System.Windows.Forms.TextBox txtEmployeeCompanyName;
+        private System.Windows.Forms.TextBox txtFatherName;
         private System.Windows.Forms.TextBox txtEmail1;
         private System.Windows.Forms.TextBox txtHomePhone;
         private System.Windows.Forms.TextBox txtBillingAddress;
-        private System.Windows.Forms.TextBox txtTIN;
+        private System.Windows.Forms.TextBox txtMotherName;
         private System.Windows.Forms.TextBox txtZip;
-        private System.Windows.Forms.TextBox txtSalesPersonName;
+        private System.Windows.Forms.TextBox txtDateOfBirth;
         private System.Windows.Forms.TextBox txtBankRegion;
         private System.Windows.Forms.Panel pnlAddEmployee;
         private System.Windows.Forms.Button btnReset;
@@ -800,7 +801,7 @@
         private System.Windows.Forms.ComboBox ddlCity;
         private System.Windows.Forms.ComboBox ddlState;
         private System.Windows.Forms.ComboBox ddlCountry;
-		private System.Windows.Forms.TextBox txtGSTNumber;
+		private System.Windows.Forms.TextBox txtPFNumber;
         private System.Windows.Forms.ComboBox ddlBankName;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
@@ -816,7 +817,7 @@
 		private System.Windows.Forms.Label lblBranchIFSCCode;
 		private System.Windows.Forms.TextBox txtBranchIfscCode;
 		private System.Windows.Forms.Label lblTinNumber;
-		private System.Windows.Forms.TextBox txtTinNumber;
+		private System.Windows.Forms.TextBox txtAadharPanNumber;
 		private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblEmployeeCode;
     }

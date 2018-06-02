@@ -184,7 +184,7 @@ namespace ERPWinApp
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            DataGridViewRow row = dgvTaxes.Rows[rowIndex];
+            DataGridViewRow row = dgvTaxes.SelectedRows[rowIndex];
             int taxId = Convert.ToInt32(row.Cells["TaxId"].Value);
             EditTax editTax = new EditTax();
             editTax.TaxId = taxId;
@@ -195,7 +195,7 @@ namespace ERPWinApp
 
         private void btnView_Click(object sender, EventArgs e)
         {
-            DataGridViewRow row = dgvTaxes.Rows[rowIndex];
+            DataGridViewRow row = dgvTaxes.SelectedRows[rowIndex];
             int taxId = Convert.ToInt32(row.Cells["TaxId"].Value);
             EditTax editTax = new EditTax();
             editTax.TaxId = taxId;
@@ -227,7 +227,7 @@ namespace ERPWinApp
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DataGridViewRow row = dgvTaxes.Rows[rowIndex];
+            DataGridViewRow row = dgvTaxes.SelectedRows[rowIndex];
             int taxId = Convert.ToInt32(row.Cells["TaxId"].Value);
             DialogResult dialogRes = CustomMessageBox.Show(Constants.DELETE_WARNING,
                                   Constants.CONSTANT_INFORMATION,

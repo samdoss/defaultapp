@@ -34,7 +34,7 @@ namespace ERPWinApp
 
         #region Public Properties
 
-        public int SearchID
+        public int fSearchID
         {
             get { return _searchID; }
             set { _searchID = value; }
@@ -61,24 +61,30 @@ namespace ERPWinApp
                     {
                         if (itemRow.Selected == true)
                         {
-                            SearchID = Convert.ToInt32(itemRow.SubItems[4].Text.ToString());
+                            fSearchID = Convert.ToInt32(itemRow.SubItems[4].Text.ToString());
                             SearchText = itemRow.SubItems[0].Text.ToString();
                             bRowSelected = true;
-                            this.Close();
+                            
                         }
                     }
                     if (!bRowSelected)
                     {
-                        SearchID = Convert.ToInt32(listUser.Items[0].SubItems[4].Text.ToString());
+                        fSearchID = Convert.ToInt32(listUser.Items[0].SubItems[4].Text.ToString());
                         SearchText = listUser.Items[0].SubItems[5].Text.ToString();
-                        this.Close();
+                        
                     }
                 }
                 else
                 {
-                    SearchID = 0;
-                    this.Close();
+                    fSearchID = 0;                   
                 }
+
+                BankDetails addorEditBankDetails = new BankDetails();
+                addorEditBankDetails.SearchID = fSearchID;
+                addorEditBankDetails.StartPosition = FormStartPosition.CenterParent;
+                addorEditBankDetails.ShowDialog(this);
+
+                txtSearchText_TextChanged(sender, e);
             }
             catch { }
         }
@@ -95,7 +101,7 @@ namespace ERPWinApp
                 listUser.Items.Clear();
                 string searchText = txtSearchText.Text.ToString().Trim();
                 BankDetailDL bankObj = new BankDetailDL();
-                using (SqlDataReader dataReader = bankObj.FindUsers(searchText))
+                using (SqlDataReader dataReader = bankObj.FindBankDetails(searchText))
                 {
                     if (dataReader.HasRows)
                     {
@@ -170,5 +176,12 @@ namespace ERPWinApp
         }
 
         #endregion
+
+        private void btnNewChequeProcess_Click(object sender, EventArgs e)
+        {
+            BankDetails addNewChequeProcess = new BankDetails();
+            addNewChequeProcess.StartPosition = FormStartPosition.CenterParent;
+            addNewChequeProcess.ShowDialog(this);            
+        }
     }
 }

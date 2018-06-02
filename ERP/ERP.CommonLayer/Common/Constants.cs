@@ -13,6 +13,10 @@
         public static string CONSTANT_COMPANY = "company";
         public static string CONSTANT_CLIENT = "client";
 	    public static string CONSTANT_SUPPLIER = "supplier";
+        public static string CONSTANT_Employee = "employee";
+        public static string CONSTANT_ChequeProcess = "Cheque Process";
+        public static string CONSTANT_CreditDebit = "Credit Debit";
+        
         public static string CONSTANT_PRODUCT = "product";
         public static string CONSTANT_INFORMATION = "Information";
         public static string CONSTANT_IMAGES = "Images";

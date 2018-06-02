@@ -87,39 +87,48 @@ namespace ERPWinApp
 
 		private void ShowSelectedEmployeeData()
 		{
-			EmployeeDL EmployeeRecord = new EmployeeDL(EmployeeID, MDIForm.CompanyID, true);
+			EmployeeDL employeeRecord = new EmployeeDL(EmployeeID, MDIForm.CompanyID, true);
 
-			txtEmployeeName.Text = EmployeeRecord.EmployeeName;
-			txtEmployeeCompanyName.Text = EmployeeRecord.EmployeeCompanyName;
-			txtHomePhone.Text = EmployeeRecord.HomePhone;
-			txtWorkPhone.Text = EmployeeRecord.WorkPhone;
-			txtMobilePhone.Text = EmployeeRecord.MobilePhone;
-			txtEmail1.Text = EmployeeRecord.WorkEmail;
-			txtTIN.Text = EmployeeRecord.TinNo;
-			txtBillingAddress.Text = EmployeeRecord.Address1;
+            lblEmployeeCode.Text = employeeRecord.EmployeeCode;
 
-			ddlCountry.SelectedValue = EmployeeRecord.CountryID;
+			txtEmployeeName.Text = employeeRecord.EmployeeName;
+			txtFatherName.Text = employeeRecord.EmployeeFatherName;
+            txtMotherName.Text = employeeRecord.EmployeeMotherName;
+
+            txtDateOfBirth.Text = employeeRecord.DateOfBirth;
+
+            txtHomePhone.Text = employeeRecord.HomePhone;
+			txtWorkPhone.Text = employeeRecord.WorkPhone;
+			txtMobilePhone.Text = employeeRecord.MobilePhone;
+			txtEmail1.Text = employeeRecord.WorkEmail;
+			
+			txtBillingAddress.Text = employeeRecord.Address1;
+
+			ddlCountry.SelectedValue = employeeRecord.CountryID;
 			FillState(ddlCountry, ddlState);
-			if (EmployeeRecord.StateID != null)
-				ddlState.SelectedValue = EmployeeRecord.StateID;
+			if (employeeRecord.StateID != null)
+				ddlState.SelectedValue = employeeRecord.StateID;
 			FillCity(ddlState, ddlCity);
-			if (EmployeeRecord.CityID != null)
-				ddlCity.SelectedValue = EmployeeRecord.CityID;
+			if (employeeRecord.CityID != null)
+				ddlCity.SelectedValue = employeeRecord.CityID;
 
-			txtSalesPersonName.Text = EmployeeRecord.SalesPersonName;
-			txtZip.Text = EmployeeRecord.PostalCode;
-			txtEmail2.Text = EmployeeRecord.HomeEmail;
-			txtComments.Text = EmployeeRecord.Comments;
-			txtGSTNumber.Text = EmployeeRecord.CcrNo;
+			
+			txtZip.Text = employeeRecord.PostalCode;
+			txtEmail2.Text = employeeRecord.HomeEmail;
+			txtComments.Text = employeeRecord.Comments;
 
-			if (EmployeeRecord.BankId != null)
-				ddlBankName.SelectedValue = EmployeeRecord.BankId;
+            txtAadharPanNumber.Text = employeeRecord.AadharNo;
+			txtPFNumber.Text = employeeRecord.PFNumber;
 
-			txtBankRegion.Text = EmployeeRecord.BankRegion;
-			txtBankAccountNo.Text = EmployeeRecord.BankAccountNumber;
-			txtBranchName.Text = EmployeeRecord.BankBranch;
-			txtBranchIfscCode.Text = EmployeeRecord.BankIFSC;
-			txtBranchCode.Text = EmployeeRecord.BankBranchCode;
+			if (employeeRecord.BankId != null)
+				ddlBankName.SelectedValue = employeeRecord.BankId;
+
+			txtBankRegion.Text = employeeRecord.BankRegion;
+			txtBankAccountNo.Text = employeeRecord.BankAccountNumber;
+			txtBranchName.Text = employeeRecord.BankBranch;
+			txtBranchIfscCode.Text = employeeRecord.BankIFSC;
+			txtBranchCode.Text = employeeRecord.BankBranchCode;
+            
 
 			btnReset.Visible = false;
 
@@ -132,22 +141,23 @@ namespace ERPWinApp
 		private void DisableControls()
 		{
 			txtEmployeeName.Enabled = false;
-			txtEmployeeCompanyName.Enabled = false;
-			txtEmployeeCompanyName.Enabled = false;
+			txtFatherName.Enabled = false;
+            txtDateOfBirth.Enabled = false;
 			txtHomePhone.Enabled = false;
 			txtEmail1.Enabled = false;
 			txtEmail2.Enabled = false;
-			txtTIN.Enabled = false;
+			txtMotherName.Enabled = false;
 			txtBillingAddress.Enabled = false;
 			ddlCity.Enabled = false;
 			txtZip.Enabled = false;
 			ddlState.Enabled = false;
 			ddlCountry.Enabled = false;
 			txtBankRegion.Enabled = false;
-			txtSalesPersonName.Enabled = false;
+			txtDateOfBirth.Enabled = false;
 			btnSave.Enabled = false;
 			ddlBankName.Enabled = false;
-			txtGSTNumber.Enabled = false;
+			txtPFNumber.Enabled = false;
+            txtAadharPanNumber.Enabled = false;
 			txtComments.Enabled = false;
 			txtBranchCode.Enabled = false;
 			txtBankAccountNo.Enabled = false;
@@ -163,43 +173,53 @@ namespace ERPWinApp
 
 		private void btnSave_Click(object sender, EventArgs e)
 		{
-			EmployeeDL Employee = new EmployeeDL();
+			EmployeeDL employee = new EmployeeDL();
 
-			Employee.CompanyID = MDIForm.CompanyID;
+			employee.CompanyID = MDIForm.CompanyID;
+                       
 
-			Employee.EmployeeName = txtEmployeeName.Text.Trim();
-			Employee.EmployeeCompanyName = txtEmployeeCompanyName.Text.Trim();
-			Employee.HomePhone = txtHomePhone.Text.Trim();
-			Employee.WorkPhone = txtWorkPhone.Text.Trim();
-			Employee.MobilePhone = txtMobilePhone.Text.Trim();
-			Employee.WorkEmail = txtEmail1.Text.Trim();
-			Employee.TinNo = txtTIN.Text.Trim();
-			Employee.Address1 = txtBillingAddress.Text.Trim();
+			employee.EmployeeName = txtEmployeeName.Text.Trim();
+            employee.EmployeeFatherName = txtFatherName.Text.Trim();
+            employee.EmployeeMotherName = txtMotherName.Text.Trim();
+
+			employee.HomePhone = txtHomePhone.Text.Trim();
+			employee.WorkPhone = txtWorkPhone.Text.Trim();
+			employee.MobilePhone = txtMobilePhone.Text.Trim();
+			
+            
+			employee.Address1 = txtBillingAddress.Text.Trim();
 			if (ddlCity.SelectedValue != null)
-				Employee.CityID = Convert.ToInt32(ddlCity.SelectedValue.ToString());
+				employee.CityID = Convert.ToInt32(ddlCity.SelectedValue.ToString());
 			if (ddlState.SelectedValue != null)
-				Employee.StateID = Convert.ToInt32(ddlState.SelectedValue.ToString());
-			Employee.CountryID = Convert.ToInt32(ddlCountry.SelectedValue.ToString());
-			Employee.PostalCode = txtZip.Text.Trim();
-			Employee.HomeEmail = txtEmail2.Text;
-			Employee.Comments = txtComments.Text.Trim();
-			Employee.CcrNo = txtGSTNumber.Text.Trim();
-			Employee.SalesPersonName = txtSalesPersonName.Text;
-			if (ddlBankName.SelectedValue != null)
-				Employee.BankId = Convert.ToInt32(ddlBankName.SelectedValue.ToString());
+				employee.StateID = Convert.ToInt32(ddlState.SelectedValue.ToString());
+			employee.CountryID = Convert.ToInt32(ddlCountry.SelectedValue.ToString());
+			employee.PostalCode = txtZip.Text.Trim();
+			
+			employee.Comments = txtComments.Text.Trim();
+            employee.PFNumber = txtPFNumber.Text.Trim();
+            employee.AadharNo = txtAadharPanNumber.Text.Trim();
 
-			Employee.BankRegion = txtBankRegion.Text.Trim();
-			Employee.BankAccountNumber = txtBankAccountNo.Text.Trim();
-			Employee.BankBranch = txtBranchName.Text;
-			Employee.BankIFSC = txtBranchIfscCode.Text;
-			Employee.BankBranchCode = txtBranchCode.Text;
-			Employee.AuditUserID = MDIForm.UserID;
+			employee.DateOfBirth = txtDateOfBirth.Text;
+
+			if (ddlBankName.SelectedValue != null)
+				employee.BankId = Convert.ToInt32(ddlBankName.SelectedValue.ToString());
+
+			employee.BankRegion = txtBankRegion.Text.Trim();
+			employee.BankAccountNumber = txtBankAccountNo.Text.Trim();
+			employee.BankBranch = txtBranchName.Text;
+			employee.BankIFSC = txtBranchIfscCode.Text;
+			employee.BankBranchCode = txtBranchCode.Text;
+
+            employee.WorkEmail = txtEmail1.Text.Trim();
+            employee.HomeEmail = txtEmail2.Text;
+
+			employee.AuditUserID = MDIForm.UserID;
 			if (EmployeeID == 0)
 			{
-				Employee.AddEditOption = 0;
+				employee.AddEditOption = 0;
 				TransactionResult result = null;
-				Employee.ScreenMode = ScreenMode.Add;
-				result = Employee.Commit();
+				employee.ScreenMode = ScreenMode.Add;
+				result = employee.Commit();
 				//MessageBox.Show(_Result.Message, "SoftwareName", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
 				CustomMessageBox.Show(string.Format(Constants.SUCCESSFULL_ADD_MESSAGE, Constants.CONSTANT_Employee, txtEmployeeName.Text),
 											  Constants.CONSTANT_INFORMATION,
@@ -209,11 +229,12 @@ namespace ERPWinApp
 			}
 			else
 			{
-				Employee.AddEditOption = 1;
-				Employee.EmployeeID = EmployeeID;
+				employee.AddEditOption = 1;
+				employee.EmployeeID = EmployeeID;
+                
 				TransactionResult result = null;
-				Employee.ScreenMode = ScreenMode.Edit;
-				result = Employee.Commit();
+				employee.ScreenMode = ScreenMode.Edit;
+				result = employee.Commit();
 				CustomMessageBox.Show(string.Format(Constants.SUCCESSFULL_SAVE_MESSAGE, txtEmployeeName.Text),
 															  Constants.CONSTANT_INFORMATION,
 															  CustomMessageBox.eDialogButtons.OK,
@@ -225,14 +246,20 @@ namespace ERPWinApp
 
 		private void ResetControls()
 		{
+            lblEmployeeCode.Text = String.Empty;
+
 			txtEmployeeName.Text = String.Empty;
-			txtEmployeeCompanyName.Text = String.Empty;
-			txtHomePhone.Text = String.Empty;
+			txtFatherName.Text = String.Empty;
+            txtMotherName.Text = String.Empty;
+
+            txtDateOfBirth.Text = String.Empty;
+
+            txtHomePhone.Text = String.Empty;
 			txtEmail1.Text = String.Empty;
 			txtEmail2.Text = "";
-			txtTIN.Text = String.Empty;
+			
 			txtBankRegion.Text = String.Empty;
-			txtSalesPersonName.Text = String.Empty;
+			
 			txtBillingAddress.Text = String.Empty;
 
 			txtBranchCode.Text = "";
@@ -240,8 +267,6 @@ namespace ERPWinApp
 			txtBranchIfscCode.Text = "";
 			txtBranchName.Text = "";
 			
-
-
 			ddlCity.SelectedIndex = 0;
 			ddlState.SelectedIndex = 0;
 			ddlCountry.SelectedIndex = 0;
@@ -250,7 +275,8 @@ namespace ERPWinApp
 			txtComments.Text = String.Empty;
 
 			ddlBankName.SelectedIndex = 0;
-			txtGSTNumber.Text = String.Empty;
+			txtPFNumber.Text = String.Empty;
+            txtAadharPanNumber.Text = string.Empty;
 		}
 
 		private void btnReset_Click(object sender, EventArgs e)

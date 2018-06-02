@@ -77,7 +77,7 @@
             this.lblShippingAddress = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtGSTNumber = new System.Windows.Forms.TextBox();
-            this.txtTinNumber = new System.Windows.Forms.TextBox();
+            this.txtPanNumber = new System.Windows.Forms.TextBox();
             this.lblTinNumber = new System.Windows.Forms.Label();
             this.lblUserMsg = new System.Windows.Forms.Label();
             this.lblCaption = new System.Windows.Forms.Label();
@@ -139,7 +139,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lblShippingAddress, 2, 9);
             this.tableLayoutPanel1.Controls.Add(this.label4, 2, 8);
             this.tableLayoutPanel1.Controls.Add(this.txtGSTNumber, 3, 8);
-            this.tableLayoutPanel1.Controls.Add(this.txtTinNumber, 3, 10);
+            this.tableLayoutPanel1.Controls.Add(this.txtPanNumber, 3, 10);
             this.tableLayoutPanel1.Controls.Add(this.lblTinNumber, 2, 10);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(14, 85);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -306,7 +306,7 @@
             this.ddlCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ddlCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlCity.FormattingEnabled = true;
-            this.ddlCity.Location = new System.Drawing.Point(177, 299);
+            this.ddlCity.Location = new System.Drawing.Point(177, 298);
             this.ddlCity.MaxLength = 150;
             this.ddlCity.Name = "ddlCity";
             this.ddlCity.Size = new System.Drawing.Size(242, 23);
@@ -662,16 +662,16 @@
             this.txtGSTNumber.Size = new System.Drawing.Size(249, 23);
             this.txtGSTNumber.TabIndex = 21;
             // 
-            // txtTinNumber
+            // txtPanNumber
             // 
-            this.txtTinNumber.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtTinNumber.Location = new System.Drawing.Point(647, 431);
-            this.txtTinNumber.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.txtTinNumber.MaxLength = 30;
-            this.txtTinNumber.Name = "txtTinNumber";
-            this.txtTinNumber.Size = new System.Drawing.Size(249, 23);
-            this.txtTinNumber.TabIndex = 23;
-            this.txtTinNumber.Visible = false;
+            this.txtPanNumber.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtPanNumber.Location = new System.Drawing.Point(647, 431);
+            this.txtPanNumber.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.txtPanNumber.MaxLength = 30;
+            this.txtPanNumber.Name = "txtPanNumber";
+            this.txtPanNumber.Size = new System.Drawing.Size(249, 23);
+            this.txtPanNumber.TabIndex = 23;
+            this.txtPanNumber.Visible = false;
             // 
             // lblTinNumber
             // 
@@ -680,9 +680,9 @@
             this.lblTinNumber.Location = new System.Drawing.Point(481, 438);
             this.lblTinNumber.Margin = new System.Windows.Forms.Padding(6, 12, 6, 6);
             this.lblTinNumber.Name = "lblTinNumber";
-            this.lblTinNumber.Size = new System.Drawing.Size(71, 15);
+            this.lblTinNumber.Size = new System.Drawing.Size(74, 15);
             this.lblTinNumber.TabIndex = 52;
-            this.lblTinNumber.Text = "TIN Number";
+            this.lblTinNumber.Text = "Pan Number";
             this.lblTinNumber.Visible = false;
             // 
             // lblUserMsg
@@ -803,7 +803,7 @@
 		private System.Windows.Forms.Label lblBranchIFSCCode;
 		private System.Windows.Forms.TextBox txtBranchIfscCode;
 		private System.Windows.Forms.Label lblTinNumber;
-		private System.Windows.Forms.TextBox txtTinNumber;
+		private System.Windows.Forms.TextBox txtPanNumber;
 		private System.Windows.Forms.Label label4;
     }
 }

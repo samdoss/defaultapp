@@ -99,22 +99,20 @@ namespace ERP.DataLayer
 
         #endregion
 
-        public SqlDataReader FindUsers(string searchText)
+        public SqlDataReader FindBankDetails(string searchText)
         {
-            Database db = DatabaseFactory.CreateDatabase(_dbAppConnection.DatabaseName);
+            Database db = CustomDatabaseFactory.CreateDatabase(_dbAppConnection.ConnectionString);
             string sqlCommand = "spFindBankDetails";
             DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
-            db.AddInParameter(dbCommand, "UserName", DbType.String, searchText);
-            //return ((RefCountingDataReader)db.ExecuteReader(dbCommand)).InnerReader as SqlDataReader; 
-            return (SqlDataReader)db.ExecuteReader(dbCommand);
-
-        }
+            db.AddInParameter(dbCommand, "SearchText", DbType.String, searchText);
+            return ((RefCountingDataReader)db.ExecuteReader(dbCommand)).InnerReader as SqlDataReader; 
+        }      
 
         #region Private Methods
 
         private TransactionResult AddBankDetails()
         {
-            Database db = DatabaseFactory.CreateDatabase(_dbAppConnection.DatabaseName);
+            Database db = CustomDatabaseFactory.CreateDatabase(_dbAppConnection.ConnectionString);
             string sqlCommand = "spAddBankDetail";
             DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
             db.AddInParameter(dbCommand, "BankDetailID", DbType.Int32, _bankDetailID);
@@ -140,7 +138,7 @@ namespace ERP.DataLayer
 
         private TransactionResult UpdateBankDetails()
         {
-            Database db = DatabaseFactory.CreateDatabase(_dbAppConnection.DatabaseName);
+            Database db = CustomDatabaseFactory.CreateDatabase(_dbAppConnection.ConnectionString);
             string sqlCommand = "spUpdateBankDetail";
             DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
 
@@ -173,12 +171,12 @@ namespace ERP.DataLayer
         {
             try
             {
-                Database db = DatabaseFactory.CreateDatabase(_dbAppConnection.DatabaseName);
+                Database db = CustomDatabaseFactory.CreateDatabase(_dbAppConnection.ConnectionString);
                 string sqlCommand = "spGetBankDetailsByID";
                 DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
                 db.AddInParameter(dbCommand, "BankDetailID", DbType.Int32, bankDetailID);
-
-                using (SqlDataReader dataReader = (SqlDataReader)db.ExecuteReader(dbCommand))
+                 
+                using (SqlDataReader dataReader = ((RefCountingDataReader)db.ExecuteReader(dbCommand)).InnerReader as SqlDataReader)
                 {
                     if (dataReader.HasRows)
                     {
@@ -198,5 +196,22 @@ namespace ERP.DataLayer
                 ErrorLog.LogErrorMessageToDB("BankDetailDL", "GetBankDetailInformation", "GetBankDetailInformation", ex.Message);
             }
         }
+
+        public DataSet GetBankDetailsList()
+        {
+            try
+            {
+                Database db = CustomDatabaseFactory.CreateDatabase(_dbAppConnection.ConnectionString);
+                string sqlCommand = "spGetBankDetailsList";
+                DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
+                return db.ExecuteDataSet(dbCommand);
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.LogErrorMessageToDB("BankDetailDL", "GetBankDetailsList", "", ex.Message);
+            }
+            return null;
+        }      
+        
     }
 }

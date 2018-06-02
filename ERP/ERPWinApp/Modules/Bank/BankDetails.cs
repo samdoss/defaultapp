@@ -20,7 +20,7 @@ namespace ERPWinApp
         }
         ScreenMode userMode;
         BankDetailDL _bankObj = new BankDetailDL();
-        private int _searchID = 0;
+        public int SearchID { get; set; }
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (!FormValidation()) { return; }
@@ -33,7 +33,7 @@ namespace ERPWinApp
             _bankObj.IFSCCode = txtIfscCode.Text;
 
             TransactionResult result;
-            if ((lblBankDetailID.Text != null) || (lblBankDetailID.Text == "0"))
+            if ((lblBankDetailID.Text != null) && (lblBankDetailID.Text == "0"))
                 userMode = ScreenMode.Add;
             else
                 userMode = ScreenMode.Edit;
@@ -62,7 +62,12 @@ namespace ERPWinApp
 
         private void BankDetails_Load(object sender, EventArgs e)
         {
+            lblBankDetailID.Text = SearchID.ToString();
 
+            if (SearchID != 0)
+                ViewBankDetailsData();
+            else
+                ClearForm();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -73,8 +78,8 @@ namespace ERPWinApp
                 frmFinder.SearchText = txtAccountHolderName.Text;
                 frmFinder.ShowDialog();
                 userMode = ScreenMode.View;
-                _searchID = frmFinder.SearchID;
-                lblBankDetailID.Text = Convert.ToString(frmFinder.SearchID);
+                SearchID = frmFinder.fSearchID;
+                lblBankDetailID.Text = Convert.ToString(frmFinder.fSearchID);
                 if (lblBankDetailID.Text != "0")
                 {
                     txtAccountHolderName.Text = frmFinder.SearchText;
@@ -116,8 +121,9 @@ namespace ERPWinApp
             bool dataExist = false;
             try
             {
+                userMode = ScreenMode.View;
                 //ClearForm();
-                BankDetailDL _bankDetail = new BankDetailDL(_searchID, true);
+                BankDetailDL _bankDetail = new BankDetailDL(SearchID, true);
                 txtAccountHolderName.Text = _bankDetail.BankAccountHolderName;
                 txtAccountNumber.Text = _bankDetail.BankAccountNumber;
                 txtBankName.Text = _bankDetail.BankName;

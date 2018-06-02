@@ -137,7 +137,7 @@ namespace ERPWinApp
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            DataGridViewRow row = dgvClientResult.Rows[rowIndex];
+            DataGridViewRow row = dgvClientResult.SelectedRows[rowIndex];
             int clientId = Convert.ToInt32(row.Cells["ClientId"].Value);
             AddNewClient addNewClient = new AddNewClient();
             addNewClient.clientID = clientId;
@@ -153,7 +153,7 @@ namespace ERPWinApp
 
         private void btnView_Click(object sender, EventArgs e)
         {
-            DataGridViewRow row = dgvClientResult.Rows[rowIndex];
+            DataGridViewRow row = dgvClientResult.SelectedRows[rowIndex];
             int clientId = Convert.ToInt32(row.Cells["ClientId"].Value);
             AddNewClient addNewClient = new AddNewClient();
             addNewClient.clientID = clientId;
@@ -163,7 +163,7 @@ namespace ERPWinApp
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DataGridViewRow row = dgvClientResult.Rows[rowIndex];
+            DataGridViewRow row = dgvClientResult.SelectedRows[rowIndex];
             int clientId = Convert.ToInt32(row.Cells["ClientId"].Value);
             DialogResult dialogRes = CustomMessageBox.Show(Constants.DELETE_WARNING,
                                   Constants.CONSTANT_INFORMATION,
