@@ -83,8 +83,15 @@
             this.lblUserMsg = new System.Windows.Forms.Label();
             this.lblCaption = new System.Windows.Forms.Label();
             this.lblMsgColor = new System.Windows.Forms.Label();
+            this.pnlPhotoBtn = new System.Windows.Forms.Panel();
+            this.btnPhoto = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.lblPhoto = new System.Windows.Forms.Label();
+            this.picPhoto = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnlAddEmployee.SuspendLayout();
+            this.pnlPhotoBtn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -308,7 +315,7 @@
             this.ddlCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ddlCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlCity.FormattingEnabled = true;
-            this.ddlCity.Location = new System.Drawing.Point(177, 299);
+            this.ddlCity.Location = new System.Drawing.Point(177, 298);
             this.ddlCity.MaxLength = 150;
             this.ddlCity.Name = "ddlCity";
             this.ddlCity.Size = new System.Drawing.Size(242, 23);
@@ -718,7 +725,7 @@
             this.lblCaption.Location = new System.Drawing.Point(-3, -1);
             this.lblCaption.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCaption.Name = "lblCaption";
-            this.lblCaption.Size = new System.Drawing.Size(981, 58);
+            this.lblCaption.Size = new System.Drawing.Size(1310, 58);
             this.lblCaption.TabIndex = 257;
             this.lblCaption.Text = "Employee";
             this.lblCaption.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -735,12 +742,72 @@
             this.lblMsgColor.Text = "Yellow";
             this.lblMsgColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pnlPhotoBtn
+            // 
+            this.pnlPhotoBtn.Controls.Add(this.btnPhoto);
+            this.pnlPhotoBtn.Controls.Add(this.btnClear);
+            this.pnlPhotoBtn.Location = new System.Drawing.Point(987, 427);
+            this.pnlPhotoBtn.Name = "pnlPhotoBtn";
+            this.pnlPhotoBtn.Size = new System.Drawing.Size(234, 41);
+            this.pnlPhotoBtn.TabIndex = 262;
+            // 
+            // btnPhoto
+            // 
+            this.btnPhoto.BackColor = System.Drawing.Color.White;
+            this.btnPhoto.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhoto.Location = new System.Drawing.Point(3, 7);
+            this.btnPhoto.Name = "btnPhoto";
+            this.btnPhoto.Size = new System.Drawing.Size(63, 27);
+            this.btnPhoto.TabIndex = 31;
+            this.btnPhoto.Text = "Se&lect";
+            this.btnPhoto.UseVisualStyleBackColor = true;
+            this.btnPhoto.Click += new System.EventHandler(this.btnPhoto_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.White;
+            this.btnClear.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(168, 7);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(63, 27);
+            this.btnClear.TabIndex = 32;
+            this.btnClear.Text = "Cl&ear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // lblPhoto
+            // 
+            this.lblPhoto.AutoSize = true;
+            this.lblPhoto.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhoto.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblPhoto.Location = new System.Drawing.Point(996, 79);
+            this.lblPhoto.Name = "lblPhoto";
+            this.lblPhoto.Size = new System.Drawing.Size(50, 16);
+            this.lblPhoto.TabIndex = 260;
+            this.lblPhoto.Text = "Photo";
+            // 
+            // picPhoto
+            // 
+            this.picPhoto.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.picPhoto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picPhoto.Image = global::ERPWinApp.Properties.Resources.photoupload;
+            this.picPhoto.InitialImage = global::ERPWinApp.Properties.Resources.photoupload;
+            this.picPhoto.Location = new System.Drawing.Point(987, 110);
+            this.picPhoto.Name = "picPhoto";
+            this.picPhoto.Size = new System.Drawing.Size(250, 300);
+            this.picPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picPhoto.TabIndex = 261;
+            this.picPhoto.TabStop = false;
+            // 
             // AddNewEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(970, 626);
+            this.ClientSize = new System.Drawing.Size(1245, 626);
+            this.Controls.Add(this.picPhoto);
+            this.Controls.Add(this.pnlPhotoBtn);
+            this.Controls.Add(this.lblPhoto);
             this.Controls.Add(this.lblMsgColor);
             this.Controls.Add(this.lblUserMsg);
             this.Controls.Add(this.lblCaption);
@@ -758,6 +825,8 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.pnlAddEmployee.ResumeLayout(false);
+            this.pnlPhotoBtn.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picPhoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -820,5 +889,10 @@
 		private System.Windows.Forms.TextBox txtAadharPanNumber;
 		private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblEmployeeCode;
+        private System.Windows.Forms.PictureBox picPhoto;
+        private System.Windows.Forms.Panel pnlPhotoBtn;
+        private System.Windows.Forms.Button btnPhoto;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Label lblPhoto;
     }
 }

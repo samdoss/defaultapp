@@ -802,6 +802,7 @@
     <Content Include="images\erpmodulefinance.jpg" />
     <Content Include="images\erpmodulesmodule.jpg" />
     <Content Include="images\logoimage.jpg" />
+    <None Include="images\photoupload.png" />
     <Content Include="images\rupeesymbol.png" />
     <Content Include="lib\AxInterop.AcroPDFLib.dll" />
     <Content Include="lib\Interop.AcroPDFLib.dll" />

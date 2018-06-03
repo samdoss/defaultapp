@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Practices.EnterpriseLibrary.Data;
 using ERP.CommonLayer;
+using System.Data;
 
 namespace ERP.DataLayer
 {
@@ -75,6 +76,12 @@ namespace ERP.DataLayer
 
         private int _auditUserID;
 
+        private byte[] _photo;
+        public byte[] Photo
+        {
+            get { return _photo; }
+            set { _photo = value; }
+        }
         public int AuditUserID
         {
             get { return _auditUserID; }
@@ -426,9 +433,6 @@ namespace ERP.DataLayer
             db.AddInParameter(dbCommand, "WorkPhone", System.Data.DbType.String, _workPhone);
             db.AddInParameter(dbCommand, "MobilePhone", System.Data.DbType.String, _mobilePhone);
 
-
-
-
             db.AddInParameter(dbCommand, "BankID", System.Data.DbType.Int32, Convert.ToInt32(_bankID));
             db.AddInParameter(dbCommand, "BankRegion", System.Data.DbType.String, _bankRegion);
             db.AddInParameter(dbCommand, "BankAccountNo", System.Data.DbType.String, _bankAccountNumber);
@@ -437,6 +441,8 @@ namespace ERP.DataLayer
             db.AddInParameter(dbCommand, "BankIFSC", System.Data.DbType.String, _bankIFSC);
             db.AddInParameter(dbCommand, "BankBranchAddress", System.Data.DbType.String, _bankBranchAddress);
             db.AddInParameter(dbCommand, "AgentID", System.Data.DbType.Int32, Convert.ToInt32(_agentID));
+
+            db.AddInParameter(dbCommand, "Photo", DbType.Binary, _photo);
 
             db.AddInParameter(dbCommand, "Comments", System.Data.DbType.String, _comments);
             db.AddInParameter(dbCommand, "PreferredEmployeeID", System.Data.DbType.Int32, Convert.ToInt32(_preferredEmployeeID));
@@ -613,6 +619,11 @@ namespace ERP.DataLayer
                     _bankIFSC = Common.CheckNull(dataRow["BankIFSC"]);
                     _bankBranchAddress = Common.CheckNull(dataRow["BankBranchAddress"]);
                     _agentID = Common.CheckIntNull(dataRow["AgentID"]);
+
+                    if (dataRow["Photo"] != DBNull.Value)
+                     _photo = (byte[])dataRow["Photo"];
+
+                    
                 }
             }
             catch (System.Exception exception1)
@@ -683,6 +694,9 @@ namespace ERP.DataLayer
 
                             obj.AadharNo = Common.CheckNull(dataReader["AadharNo"]);
                             obj.PFNumber = Common.CheckNull(dataReader["PFNo"]);
+
+                            if (dataReader["Photo"] != DBNull.Value)
+                                obj.Photo = (byte[])dataReader["Photo"];
 
                             EmployeeList.Add(obj);
                         }

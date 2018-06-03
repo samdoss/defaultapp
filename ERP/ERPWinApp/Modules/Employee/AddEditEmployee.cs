@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using ERP.CommonLayer;
 using ERP.DataLayer;
+using System.IO;
 
 namespace ERPWinApp
 {
@@ -128,7 +129,15 @@ namespace ERPWinApp
 			txtBranchName.Text = employeeRecord.BankBranch;
 			txtBranchIfscCode.Text = employeeRecord.BankIFSC;
 			txtBranchCode.Text = employeeRecord.BankBranchCode;
-            
+            if (employeeRecord.Photo != null)
+            {
+                MemoryStream ms = new MemoryStream(employeeRecord.Photo);
+                if (ms.Length != 0)
+                {
+                    picPhoto.Image = System.Drawing.Image.FromStream(ms);
+                    picPhoto.Refresh();
+                }
+            }
 
 			btnReset.Visible = false;
 
@@ -214,6 +223,16 @@ namespace ERPWinApp
             employee.HomeEmail = txtEmail2.Text;
 
 			employee.AuditUserID = MDIForm.UserID;
+
+            if (picPhoto.Image != null)
+            {
+                MemoryStream ms = new MemoryStream();
+                picPhoto.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                byte[] bytes = ms.GetBuffer();
+                employee.Photo = bytes;
+            }
+
+
 			if (EmployeeID == 0)
 			{
 				employee.AddEditOption = 0;
@@ -311,5 +330,35 @@ namespace ERPWinApp
 			}
 			catch { }
 		}
+
+        private void btnPhoto_Click(object sender, EventArgs e)
+        {
+            string strFilePath;
+            System.Drawing.Image thumbnail, fullimage;
+
+            OpenFileDialog opnFileBoxImage = new OpenFileDialog();
+            opnFileBoxImage.Filter = "Image files (*.bmp; *.gif; *.jpg; *.png)|*.bmp;*.gif;*.jpg;*.png|" + "All files (*.*)|*.*";
+
+            if (opnFileBoxImage.ShowDialog() == DialogResult.OK)
+            {
+                strFilePath = opnFileBoxImage.FileName;
+                try
+                {
+                    fullimage = System.Drawing.Image.FromFile(strFilePath);
+                    thumbnail = fullimage.GetThumbnailImage(250, 300, null, IntPtr.Zero);
+                    picPhoto.Image = thumbnail;
+                    fullimage.Dispose();
+                }
+                catch
+                {
+                    MessageBox.Show("Please Select Valid Image Format.", "SoftwareName", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                }
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            picPhoto.Image = null;
+        }
 	}
 }
