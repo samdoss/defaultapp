@@ -777,5 +777,28 @@ namespace ERP.DataLayer
             return dataSet;
         }
 
+        public System.Data.DataSet GetEmployeeListByCompanyID(int companyID)
+        {
+            System.Data.DataSet dataSet;
+            dataSet = new System.Data.DataSet();
+            try
+            {
+                Database database = CustomDatabaseFactory.CreateDatabase(_myConnection.ConnectionString);
+                System.Data.Common.DbCommand dbCommand = database.GetStoredProcCommand("spGetEmployeeListByCompanyID");
+                dbCommand.Parameters.Clear();
+                dbCommand.CommandTimeout = 300;
+                database.AddInParameter(dbCommand, "CompanyID", System.Data.DbType.Int32, companyID);
+                dataSet = database.ExecuteDataSet(dbCommand);
+            }
+            catch (System.Exception exception1)
+            {
+                ErrorLog.LogErrorMessageToDB("", "Employee.cs", "spGetEmployeeListByCompanyID", exception1.Message.ToString());
+                throw;
+            }
+            return dataSet;
+        }
+
+        
+
     }
 }

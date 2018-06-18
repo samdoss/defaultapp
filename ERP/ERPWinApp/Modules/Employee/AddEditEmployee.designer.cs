@@ -790,7 +790,7 @@
             // 
             this.picPhoto.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.picPhoto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.picPhoto.Image = global::ERPWinApp.Properties.Resources.photoupload;
+            this.picPhoto.Image = global::ERPWinApp.Properties.Resources.smallimage;
             this.picPhoto.InitialImage = global::ERPWinApp.Properties.Resources.photoupload;
             this.picPhoto.Location = new System.Drawing.Point(987, 110);
             this.picPhoto.Name = "picPhoto";

@@ -73,6 +73,7 @@
     <Compile Include="Common\CalendarColumn.cs" />
     <Compile Include="Common\CommonDL.cs" />
     <Compile Include="Common\ErrorLog.cs" />
+    <Compile Include="Modules\AttendanceDL.cs" />
     <Compile Include="Modules\BankDetailDL.cs" />
     <Compile Include="Modules\BankCreditDebitDL.cs" />
     <Compile Include="Modules\Client.cs" />
