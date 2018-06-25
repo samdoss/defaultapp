@@ -353,6 +353,12 @@
     <Compile Include="Modules\Attendance\frmAttendance.designer.cs">
       <DependentUpon>frmAttendance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Attendance\frmEmployeeAttendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Attendance\frmEmployeeAttendance.designer.cs">
+      <DependentUpon>frmEmployeeAttendance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Bank\BankDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -657,6 +663,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Attendance\frmAttendance.resx">
       <DependentUpon>frmAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Attendance\frmEmployeeAttendance.resx">
+      <DependentUpon>frmEmployeeAttendance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Bank\BankDetails.resx">
       <DependentUpon>BankDetails.cs</DependentUpon>
