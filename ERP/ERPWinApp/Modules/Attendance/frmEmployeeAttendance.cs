@@ -177,27 +177,27 @@ namespace ERPWinApp
 
         private void chkEnabled_Click(object sender, EventArgs e)
         {
-            try
-            {
-                TransactionResult _result = null;
-                _result = Users.EnableOrDisableUser(_appConnection, Convert.ToInt32(ddlEmployeeName.SelectedValue.ToString()), chkEnabled.Checked);
-                if (_result.Status == TransactionStatus.Success)
-                {
-                    if (chkEnabled.Checked == true)
-                    {
-                        chkEnabled.Text = "Enabled";
-                        chkEnabled.ForeColor = Color.Black;
-                        MessageBox.Show("The User Account is Enabled.", "SoftwareName", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                    }
-                    else if (chkEnabled.Checked == false)
-                    {
-                        chkEnabled.Text = "Disabled";
-                        chkEnabled.ForeColor = Color.Firebrick;
-                        MessageBox.Show("The User Account is Disabled.", "SoftwareName", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                    }
-                }
-            }
-            catch { }
+            //try
+            //{
+            //    TransactionResult _result = null;
+            //    _result = Users.EnableOrDisableUser(_appConnection, Convert.ToInt32(ddlEmployeeName.SelectedValue.ToString()), chkEnabled.Checked);
+            //    if (_result.Status == TransactionStatus.Success)
+            //    {
+            //        if (chkEnabled.Checked == true)
+            //        {
+            //            chkEnabled.Text = "Enabled";
+            //            chkEnabled.ForeColor = Color.Black;
+            //            MessageBox.Show("The User Account is Enabled.", "SoftwareName", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            //        }
+            //        else if (chkEnabled.Checked == false)
+            //        {
+            //            chkEnabled.Text = "Disabled";
+            //            chkEnabled.ForeColor = Color.Firebrick;
+            //            MessageBox.Show("The User Account is Disabled.", "SoftwareName", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            //        }
+            //    }
+            //}
+            //catch { }
         }
 
         private void frmEmployeeAttendance_KeyPress(object sender, KeyPressEventArgs e)
